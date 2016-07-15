@@ -15,14 +15,75 @@ let albumName = "Nett"
 class PreviewImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var drawImageView: UIImageView!
-    
-    
+
+
+    @IBOutlet weak var saveImageBtn: UIButton!
+    @IBOutlet weak var drawBtn: UIButton!
+    @IBOutlet weak var eraserBtn: UIButton!
+    @IBOutlet weak var undoBtn: UIButton!
+    @IBOutlet weak var pencilBtn: UIButton!
+    @IBOutlet weak var cameraBtn: UIButton!
     
     // HIDE STATUS BAR
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+
+
+    let picker = UIImagePickerController()
+    var selectedImage:UIImage?{
+        didSet{
+            imageView.image = selectedImage
+        }
+    }
+    
+    /*
+    @IBAction func cameraBtn_Click(sender: AnyObject) {
+        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) 
+     
+    }else{
+     
+        showAlertWithTitle("Error", message: "No camera availabe.")
+        return
+    }
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = UIImagePickerControllerSourceType.Camera
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    */
+    
+    
+    
+    
+    @IBAction func saveImageBtn_Click(sender: AnyObject) {
+        print("drawBtn_Click")
+        UIImageWriteToSavedPhotosAlbum(self.drawImageView.getSignatureImage(), nil, nil, nil)
+    }
+
+
+    @IBAction func drawBtn_Click(sender: AnyObject) {
+        print("drawBtn_Click")
+        if let selectedImage = selectedImage {
+            UIImageWriteToSavedPhotosAlbum(selectedImage, self,#selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    @IBAction func eraserBtn_Click(sender: AnyObject) {
+        print("eraserBtn_Click")
+    }
+    
+    @IBAction func undoBtn_Click(sender: AnyObject) {
+        print("undoBtn_Click")
+
+    }
+    
+    @IBAction func pencilBtn_Click(sender: AnyObject) {
+        print("pencilBtn_Click")
+    }
+    
     
     
     // GET IMAGE FROM CAMERA ----------------
@@ -39,7 +100,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // GET IMAGE FROM CAMERA ----------------
     
     
-    
+
     // DRAWING FUNCTION ----------------
     var start: CGPoint?
     
@@ -83,7 +144,53 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         drawImageView.image = newImage
     }
     // DRAWING FUNCTION ----------------
+  
     
+    
+    /*
+    // HIDE BUTTONS ----------------
+    func hideEditor() {
+        drawBtn.hidden = !drawBtn.hidden
+        eraserBtn.hidden = !eraserBtn.hidden
+    }
+    // HIDE BUTTONS ----------------
+    */
+    
+    
+    
+/*
+     func saveImage (image: UIImage, path: String ) -> Bool{
+     
+     let pngImageData = UIImagePNGRepresentation(drawImageView.image!)
+     //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
+     
+     print("!!!saving image at:  \(path)")
+     
+     let result = pngImageData!.writeToFile(path, atomically: true)
+     
+     return result
+     }
+*/
+    
+    
+
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>){
+        guard error == nil else{
+            showAlertWithTitle("Error", message: error!.localizedDescription)
+            return
+        }
+        showAlertWithTitle(nil, message: "Image Saved")
+    }
+    
+    func showAlertWithTitle(title:String?, message:String?){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
     
     
     
@@ -95,12 +202,20 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         imageView.image = image
         
         
-        
-        
     }
     
     
     
+    //Mark: UIImagePickerControllerDelegate
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let selectedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        self.selectedImage = selectedImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
