@@ -12,6 +12,7 @@
 		31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D041D389A450081C7E1 /* Main.storyboard */; };
 		31AA3D081D389A450081C7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D071D389A450081C7E1 /* Assets.xcassets */; };
 		31AA3D0B1D389A450081C7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */; };
+		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		31AA3D071D389A450081C7E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31AA3D0A1D389A450081C7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31AA3D0C1D389A450081C7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
+		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
+		F57C9414157A8E452135ED93 /* Pods_Nett.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nett.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				31AA3CFF1D389A450081C7E1 /* Nett */,
 				31AA3CFE1D389A450081C7E1 /* Products */,
+				9ADACEB90B6739D96CB2D280 /* Pods */,
+				B6C149983F11F61CDFBBE16F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Nett;
 			sourceTree = "<group>";
 		};
+		9ADACEB90B6739D96CB2D280 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */,
+				F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B6C149983F11F61CDFBBE16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F57C9414157A8E452135ED93 /* Pods_Nett.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31AA3D0F1D389A450081C7E1 /* Build configuration list for PBXNativeTarget "Nett" */;
 			buildPhases = (
+				FA98ADF7A456FE9E0CBCCDC2 /* [CP] Check Pods Manifest.lock */,
 				31AA3CF91D389A450081C7E1 /* Sources */,
 				31AA3CFA1D389A450081C7E1 /* Frameworks */,
 				31AA3CFB1D389A450081C7E1 /* Resources */,
+				E3D66A67CF7C034D5F01D6C3 /* [CP] Embed Pods Frameworks */,
+				8F0663A887EEE38FA9620C34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F0663A887EEE38FA9620C34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nett/Pods-Nett-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D66A67CF7C034D5F01D6C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nett/Pods-Nett-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA98ADF7A456FE9E0CBCCDC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31AA3CF91D389A450081C7E1 /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		31AA3D101D389A450081C7E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nett/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		31AA3D111D389A450081C7E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Nett/Info.plist;
@@ -288,6 +365,7 @@
 				31AA3D111D389A450081C7E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
