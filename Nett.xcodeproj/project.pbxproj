@@ -12,8 +12,30 @@
 		31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D041D389A450081C7E1 /* Main.storyboard */; };
 		31AA3D081D389A450081C7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D071D389A450081C7E1 /* Assets.xcassets */; };
 		31AA3D0B1D389A450081C7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */; };
+		31AA3D1B1D38B3E00081C7E1 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */; };
+		31AA3D1C1D38B3E00081C7E1 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */; };
+		31AA3D1D1D38B3E00081C7E1 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */; };
+		31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D201D38B4030081C7E1 /* HomeViewController.m */; };
+		31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D221D38B4030081C7E1 /* ImageViewController.m */; };
+		31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D241D38B4030081C7E1 /* VideoViewController.m */; };
+		31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */; };
+		31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */; };
+		31AA3D381D38B4720081C7E1 /* NettTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D371D38B4720081C7E1 /* NettTests.swift */; };
+		31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */; };
+		31AA3D441D38B56A0081C7E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
+		31AA3D461D38B5740081C7E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D451D38B5740081C7E1 /* AVFoundation.framework */; };
 		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31AA3D3A1D38B4720081C7E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31AA3CF51D389A450081C7E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31AA3CFC1D389A450081C7E1;
+			remoteInfo = Nett;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		31AA3CFD1D389A450081C7E1 /* Nett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nett.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +45,29 @@
 		31AA3D071D389A450081C7E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31AA3D0A1D389A450081C7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31AA3D0C1D389A450081C7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31AA3D141D38B3DF0081C7E1 /* Nett-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nett-Bridging-Header.h"; sourceTree = "<group>"; };
+		31AA3D151D38B3E00081C7E1 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		31AA3D171D38B3E00081C7E1 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		31AA3D191D38B3E00081C7E1 /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		31AA3D1F1D38B4030081C7E1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		31AA3D201D38B4030081C7E1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		31AA3D211D38B4030081C7E1 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		31AA3D221D38B4030081C7E1 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		31AA3D231D38B4030081C7E1 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		31AA3D241D38B4030081C7E1 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		31AA3D291D38B4280081C7E1 /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
+		31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
+		31AA3D2B1D38B4280081C7E1 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		31AA3D351D38B4720081C7E1 /* NettTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NettTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31AA3D371D38B4720081C7E1 /* NettTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NettTests.swift; sourceTree = "<group>"; };
+		31AA3D391D38B4720081C7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
+		31AA3D431D38B56A0081C7E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		31AA3D451D38B5740081C7E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
 		F57C9414157A8E452135ED93 /* Pods_Nett.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nett.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +82,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		31AA3D321D38B4720081C7E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31AA3D461D38B5740081C7E1 /* AVFoundation.framework in Frameworks */,
+				31AA3D441D38B56A0081C7E1 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				31AA3CFF1D389A450081C7E1 /* Nett */,
+				31AA3D361D38B4720081C7E1 /* NettTests */,
 				31AA3CFE1D389A450081C7E1 /* Products */,
 				9ADACEB90B6739D96CB2D280 /* Pods */,
 				B6C149983F11F61CDFBBE16F /* Frameworks */,
@@ -54,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				31AA3CFD1D389A450081C7E1 /* Nett.app */,
+				31AA3D351D38B4720081C7E1 /* NettTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,14 +117,73 @@
 		31AA3CFF1D389A450081C7E1 /* Nett */ = {
 			isa = PBXGroup;
 			children = (
+				31AA3D121D38B3A80081C7E1 /* LLSimpleCamera */,
 				31AA3D001D389A450081C7E1 /* AppDelegate.swift */,
 				31AA3D021D389A450081C7E1 /* ViewController.swift */,
+				31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */,
 				31AA3D041D389A450081C7E1 /* Main.storyboard */,
 				31AA3D071D389A450081C7E1 /* Assets.xcassets */,
 				31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */,
 				31AA3D0C1D389A450081C7E1 /* Info.plist */,
 			);
 			path = Nett;
+			sourceTree = "<group>";
+		};
+		31AA3D121D38B3A80081C7E1 /* LLSimpleCamera */ = {
+			isa = PBXGroup;
+			children = (
+				31AA3D281D38B40F0081C7E1 /* LLSimpleCamera */,
+				31AA3D1E1D38B3E80081C7E1 /* CameraControllers */,
+				31AA3D131D38B3B90081C7E1 /* CameraUltilities */,
+			);
+			name = LLSimpleCamera;
+			sourceTree = "<group>";
+		};
+		31AA3D131D38B3B90081C7E1 /* CameraUltilities */ = {
+			isa = PBXGroup;
+			children = (
+				31AA3D151D38B3E00081C7E1 /* UIImage+Crop.h */,
+				31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */,
+				31AA3D171D38B3E00081C7E1 /* UIImage+Resize.h */,
+				31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */,
+				31AA3D191D38B3E00081C7E1 /* ViewUtils.h */,
+				31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */,
+				31AA3D141D38B3DF0081C7E1 /* Nett-Bridging-Header.h */,
+			);
+			name = CameraUltilities;
+			sourceTree = "<group>";
+		};
+		31AA3D1E1D38B3E80081C7E1 /* CameraControllers */ = {
+			isa = PBXGroup;
+			children = (
+				31AA3D1F1D38B4030081C7E1 /* HomeViewController.h */,
+				31AA3D201D38B4030081C7E1 /* HomeViewController.m */,
+				31AA3D211D38B4030081C7E1 /* ImageViewController.h */,
+				31AA3D221D38B4030081C7E1 /* ImageViewController.m */,
+				31AA3D231D38B4030081C7E1 /* VideoViewController.h */,
+				31AA3D241D38B4030081C7E1 /* VideoViewController.m */,
+			);
+			name = CameraControllers;
+			sourceTree = "<group>";
+		};
+		31AA3D281D38B40F0081C7E1 /* LLSimpleCamera */ = {
+			isa = PBXGroup;
+			children = (
+				31AA3D291D38B4280081C7E1 /* LLSimpleCamera.h */,
+				31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */,
+				31AA3D2B1D38B4280081C7E1 /* UIImage+FixOrientation.h */,
+				31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */,
+			);
+			name = LLSimpleCamera;
+			sourceTree = "<group>";
+		};
+		31AA3D361D38B4720081C7E1 /* NettTests */ = {
+			isa = PBXGroup;
+			children = (
+				31AA3D371D38B4720081C7E1 /* NettTests.swift */,
+				31AA3D391D38B4720081C7E1 /* Info.plist */,
+			);
+			path = NettTests;
 			sourceTree = "<group>";
 		};
 		9ADACEB90B6739D96CB2D280 /* Pods */ = {
@@ -83,6 +198,8 @@
 		B6C149983F11F61CDFBBE16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				31AA3D451D38B5740081C7E1 /* AVFoundation.framework */,
+				31AA3D431D38B56A0081C7E1 /* Photos.framework */,
 				F57C9414157A8E452135ED93 /* Pods_Nett.framework */,
 			);
 			name = Frameworks;
@@ -111,6 +228,24 @@
 			productReference = 31AA3CFD1D389A450081C7E1 /* Nett.app */;
 			productType = "com.apple.product-type.application";
 		};
+		31AA3D341D38B4720081C7E1 /* NettTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31AA3D3C1D38B4720081C7E1 /* Build configuration list for PBXNativeTarget "NettTests" */;
+			buildPhases = (
+				31AA3D311D38B4720081C7E1 /* Sources */,
+				31AA3D321D38B4720081C7E1 /* Frameworks */,
+				31AA3D331D38B4720081C7E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31AA3D3B1D38B4720081C7E1 /* PBXTargetDependency */,
+			);
+			name = NettTests;
+			productName = NettTests;
+			productReference = 31AA3D351D38B4720081C7E1 /* NettTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +258,10 @@
 				TargetAttributes = {
 					31AA3CFC1D389A450081C7E1 = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					31AA3D341D38B4720081C7E1 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 31AA3CFC1D389A450081C7E1;
 					};
 				};
 			};
@@ -140,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				31AA3CFC1D389A450081C7E1 /* Nett */,
+				31AA3D341D38B4720081C7E1 /* NettTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +292,13 @@
 				31AA3D0B1D389A450081C7E1 /* LaunchScreen.storyboard in Resources */,
 				31AA3D081D389A450081C7E1 /* Assets.xcassets in Resources */,
 				31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31AA3D331D38B4720081C7E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +357,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AA3D1B1D38B3E00081C7E1 /* UIImage+Crop.m in Sources */,
+				31AA3D1D1D38B3E00081C7E1 /* ViewUtils.m in Sources */,
+				31AA3D1C1D38B3E00081C7E1 /* UIImage+Resize.m in Sources */,
 				31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */,
 				31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */,
+				31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */,
+				31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */,
+				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
+				31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */,
+				31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */,
+				31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31AA3D311D38B4720081C7E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31AA3D381D38B4720081C7E1 /* NettTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31AA3D3B1D38B4720081C7E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31AA3CFC1D389A450081C7E1 /* Nett */;
+			targetProxy = 31AA3D3A1D38B4720081C7E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		31AA3D041D389A450081C7E1 /* Main.storyboard */ = {
@@ -327,10 +499,13 @@
 			baseConfigurationReference = D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Nett/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.webim.Nett;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nett/Nett-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -339,10 +514,36 @@
 			baseConfigurationReference = F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Nett/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.webim.Nett;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Nett/Nett-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		31AA3D3D1D38B4720081C7E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NettTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.webim.NettTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nett.app/Nett";
+			};
+			name = Debug;
+		};
+		31AA3D3E1D38B4720081C7E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NettTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.webim.NettTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nett.app/Nett";
 			};
 			name = Release;
 		};
@@ -366,6 +567,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		31AA3D3C1D38B4720081C7E1 /* Build configuration list for PBXNativeTarget "NettTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31AA3D3D1D38B4720081C7E1 /* Debug */,
+				31AA3D3E1D38B4720081C7E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
