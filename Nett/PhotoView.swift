@@ -1,17 +1,17 @@
 //
-//  SignatureView.swift
+//  PhotoView.swift
 //  Nett
 //
-//  Created by Phil Wright on 4/10/16.
-//  Copyright © 2016 Touchopia, LLC. All rights reserved.
+//  Created by Eric Huang on 2016/7/15.
+//  Copyright © 2016年 WeBIM. All rights reserved.
 //
 
 import UIKit
 
-class SignatureView: UIImageView {
+class PhotoView: UIImageView {
     
     let defaultLineWidth:CGFloat = 7.0
-
+    
     let defaultColor:UIColor = UIColor.redColor()
     
     let beizerPath = UIBezierPath()
@@ -58,16 +58,16 @@ class SignatureView: UIImageView {
         if let touchPoint = touch?.locationInView(self) {
             self.control = self.control + 1
             self.pointsArray.insert(touchPoint, atIndex: self.control)
-        
+            
             if (self.control == 4) {
                 
                 pointsArray[3] = CGPoint(x: (pointsArray[2].x + pointsArray[4].x)/2.0, y: (pointsArray[2].y + pointsArray[4].y)/2.0)
-            
+                
                 beizerPath.moveToPoint(pointsArray[0])
                 
                 beizerPath.addCurveToPoint(pointsArray[3], controlPoint1: pointsArray[1], controlPoint2: pointsArray[2])
                 self.setNeedsDisplay()
-            
+                
                 pointsArray[0] = pointsArray[3]
                 pointsArray[1] = pointsArray[4]
                 
@@ -105,7 +105,7 @@ class SignatureView: UIImageView {
             self.backgroundColor?.setFill()
             rectpath.fill()
             image.drawAtPoint(CGPointZero)
-        
+            
             //Set final color for drawing
             defaultColor.setStroke()
             beizerPath.stroke()
@@ -137,5 +137,6 @@ class SignatureView: UIImageView {
         
         self.setNeedsDisplay()
     }
+    
 
 }

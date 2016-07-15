@@ -33,6 +33,7 @@
 		31AA3D5D1D38DAC60081C7E1 /* BaseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */; };
 		31AA3D5E1D38DAC60081C7E1 /* drawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */; };
 		31AA3D641D390BB10081C7E1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D631D390BB10081C7E1 /* SignatureView.swift */; };
+		31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D651D391DC80081C7E1 /* PhotoView.swift */; };
 		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBrush.swift; sourceTree = "<group>"; };
 		31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawImageView.swift; sourceTree = "<group>"; };
 		31AA3D631D390BB10081C7E1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		31AA3D651D391DC80081C7E1 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
 		F57C9414157A8E452135ED93 /* Pods_Nett.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nett.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 				31AA3D021D389A450081C7E1 /* ViewController.swift */,
 				31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */,
 				31AA3D631D390BB10081C7E1 /* SignatureView.swift */,
+				31AA3D651D391DC80081C7E1 /* PhotoView.swift */,
 				31AA3D041D389A450081C7E1 /* Main.storyboard */,
 				31AA3D071D389A450081C7E1 /* Assets.xcassets */,
 				31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */,
@@ -409,6 +412,7 @@
 				31AA3D581D38DA2C0081C7E1 /* RectangleBrush.swift in Sources */,
 				31AA3D641D390BB10081C7E1 /* SignatureView.swift in Sources */,
 				31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */,
+				31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */,
 				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
 				31AA3D571D38DA2C0081C7E1 /* DashLineBrush.swift in Sources */,
 				31AA3D561D38DA2C0081C7E1 /* LineBrush.swift in Sources */,

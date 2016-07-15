@@ -14,10 +14,15 @@ let albumName = "Nett"
 
 class PreviewImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
-
-
+    //@IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var imageView: PhotoView!
+    @IBOutlet weak var signatureView: SignatureView!
     @IBOutlet weak var saveImageBtn: UIButton!
+    @IBOutlet weak var clearSignatureViewBtn: UIButton!
+    @IBOutlet weak var retakeBtn: UIButton!
+
+    
     @IBOutlet weak var drawBtn: UIButton!
     @IBOutlet weak var eraserBtn: UIButton!
     @IBOutlet weak var undoBtn: UIButton!
@@ -37,38 +42,41 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         }
     }
     
-    /*
-    @IBAction func cameraBtn_Click(sender: AnyObject) {
-        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) 
-     
-    }else{
-     
-        showAlertWithTitle("Error", message: "No camera availabe.")
-        return
-    }
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(picker, animated: true, completion: nil)
-    }
-    */
     
-    
-    
-    
+    // SAVE IMAGE ----------------
     @IBAction func saveImageBtn_Click(sender: AnyObject) {
         print("drawBtn_Click")
-        UIImageWriteToSavedPhotosAlbum(self.drawImageView.getSignatureImage(), nil, nil, nil)
-    }
+        UIImageWriteToSavedPhotosAlbum(self.signatureView.getSignatureImage(), nil, nil, nil)
+        // save original image
+        UIImageWriteToSavedPhotosAlbum(self.imageView.getSignatureImage(), nil, nil, nil)
 
+        // Show alert message: Image Saved
+        let alert = UIAlertController(title: "Image Saved", message: "Successful!", preferredStyle: UIAlertControllerStyle.Alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // CLEAR SIGNATURE VIEW ----------------
+    @IBAction func clearSignatureViewBtn_Click(sender: AnyObject) {
+        print("clearSignatureViewBtn_Click")
+        signatureView.image = nil
+    }
+    
+    // RETAKE ----------------
+    @IBAction func retakeBtn_Click(sender: AnyObject) {
+        print("retakeBtn_Click")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    
+    
+    
 
     @IBAction func drawBtn_Click(sender: AnyObject) {
         print("drawBtn_Click")
-        if let selectedImage = selectedImage {
-            UIImageWriteToSavedPhotosAlbum(selectedImage, self,#selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        }
+
     }
     
     @IBAction func eraserBtn_Click(sender: AnyObject) {
@@ -107,12 +115,12 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // 觸控開始
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first as UITouch!
-        start = touch.locationInView(self.drawImageView)
+        start = touch.locationInView(self.signatureView)
     }
     // 觸控移動
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first as UITouch!
-        let end = touch.locationInView(self.drawImageView)
+        let end = touch.locationInView(self.signatureView)
         
         if let s = self.start {
             draw(s, end: end)
@@ -121,11 +129,11 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func draw(start: CGPoint, end: CGPoint) {
-        UIGraphicsBeginImageContext(self.drawImageView.frame.size)
+        UIGraphicsBeginImageContext(self.signatureView.frame.size)
         //初始化
         let context = UIGraphicsGetCurrentContext()
         
-        drawImageView?.image?.drawInRect(CGRect(x: 0, y: 0, width: drawImageView.frame.width, height: drawImageView.frame.height))
+        signatureView?.image?.drawInRect(CGRect(x: 0, y: 0, width: signatureView.frame.width, height: signatureView.frame.height))
         
         // 圓滑線型
         CGContextSetLineCap(context, CGLineCap.Round)
@@ -141,10 +149,14 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         CGContextStrokePath(context)
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        drawImageView.image = newImage
+        signatureView.image = newImage
+        
     }
     // DRAWING FUNCTION ----------------
-  
+
+    
+    
+    
     
     
     /*
@@ -174,7 +186,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     
 
-    
+/*
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>){
         guard error == nil else{
             showAlertWithTitle("Error", message: error!.localizedDescription)
@@ -182,7 +194,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         }
         showAlertWithTitle(nil, message: "Image Saved")
     }
-    
+
     func showAlertWithTitle(title:String?, message:String?){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
@@ -191,7 +203,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         
         presentViewController(alertController, animated: true, completion: nil)
     }
-    
+*/
     
     
     
