@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3106DF601D3CC68D00049354 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
+		3106DF621D3CC69400049354 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF611D3CC69400049354 /* AudioToolbox.framework */; };
+		3106DF641D3CC69900049354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF631D3CC69900049354 /* QuartzCore.framework */; };
 		31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D001D389A450081C7E1 /* AppDelegate.swift */; };
 		31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D021D389A450081C7E1 /* ViewController.swift */; };
 		31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D041D389A450081C7E1 /* Main.storyboard */; };
@@ -48,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3106DF611D3CC69400049354 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3106DF631D3CC69900049354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		31AA3CFD1D389A450081C7E1 /* Nett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA3D001D389A450081C7E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AA3D021D389A450081C7E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3106DF641D3CC69900049354 /* QuartzCore.framework in Frameworks */,
+				3106DF621D3CC69400049354 /* AudioToolbox.framework in Frameworks */,
+				3106DF601D3CC68D00049354 /* Photos.framework in Frameworks */,
 				CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +252,8 @@
 		B6C149983F11F61CDFBBE16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3106DF631D3CC69900049354 /* QuartzCore.framework */,
+				3106DF611D3CC69400049354 /* AudioToolbox.framework */,
 				31AA3D451D38B5740081C7E1 /* AVFoundation.framework */,
 				31AA3D431D38B56A0081C7E1 /* Photos.framework */,
 				F57C9414157A8E452135ED93 /* Pods_Nett.framework */,

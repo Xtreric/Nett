@@ -22,11 +22,12 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var saveImageBtn: UIButton!
     @IBOutlet weak var clearSignatureViewBtn: UIButton!
     @IBOutlet weak var retakeBtn: UIButton!
+    
+    @IBOutlet weak var recordSoundBtn: UIButton!
+    @IBOutlet weak var playSoundBtn: UIButton!
+    @IBOutlet weak var saveSoundBtn: UIButton!
+    
 
-    @IBOutlet weak var drawBtn: UIButton!
-    @IBOutlet weak var eraserBtn: UIButton!
-    @IBOutlet weak var undoBtn: UIButton!
-    @IBOutlet weak var pencilBtn: UIButton!
     
     // HIDE STATUS BAR
     override func prefersStatusBarHidden() -> Bool {
@@ -62,7 +63,6 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         mergeView.image = screenshot
         
         
-        
         // save original image
         UIImageWriteToSavedPhotosAlbum(self.imageView.getSignatureImage(), nil, nil, nil)
         // save merge image
@@ -92,28 +92,37 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // RECORD SOUND ----------------
+    @IBAction func recordSoundBtn_Click(sender: AnyObject) {
+        if sender.titleLabel?!.text == "Record"{
+            soundRecorder.record()
+            sender.setTitle("Stop", forState: .Normal)
+            playSoundBtn.enabled = false
+        } else {
+            soundRecorder.stop()
+            sender.setTitle("Record", forState: .Normal)
+            playSoundBtn.enabled = true
+        }
+    }
 
-    
-    
-    
-
-    @IBAction func drawBtn_Click(sender: AnyObject) {
-        print("drawBtn_Click")
-
+    // PLAY SOUND ----------------
+    @IBAction func playSoundBtn_Click(sender: AnyObject) {
+        if sender.titleLabel?!.text == "Play" {
+            recordSoundBtn.enabled = false
+            sender.setTitle("Stop", forState: .Normal)
+            preparePlayer()
+            soundPlayer.play()
+        } else{
+            soundPlayer.stop()
+            sender.setTitle("Play", forState: .Normal)
+        }
     }
     
-    @IBAction func eraserBtn_Click(sender: AnyObject) {
-        print("eraserBtn_Click")
+    // SAVE SOUND ----------------
+    @IBAction func saveSoundBtn_Click(sender: AnyObject) {
+        print("saveSoundBtn_Click")
     }
     
-    @IBAction func undoBtn_Click(sender: AnyObject) {
-        print("undoBtn_Click")
-
-    }
-    
-    @IBAction func pencilBtn_Click(sender: AnyObject) {
-        print("pencilBtn_Click")
-    }
     
     
     
@@ -161,7 +170,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         // 圓滑線型
         CGContextSetLineCap(context, CGLineCap.Round)
         // 線寬
-        CGContextSetLineWidth(context, 6)
+        CGContextSetLineWidth(context, 4)
         // 描繪線顏色
         CGContextSetRGBStrokeColor(context, 255, 251, 0, 1)
         // 獲取觸控點座標
@@ -177,21 +186,16 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
     // DRAWING FUNCTION ----------------
 
-    
-    
-    
-    
-    
+
     
     // HIDE BUTTONS ----------------
     func hideButtons() {
         saveImageBtn.hidden = true
         clearSignatureViewBtn.hidden = true
         retakeBtn.hidden = true
-        drawBtn.hidden = true
-        eraserBtn.hidden = true
-        undoBtn.hidden = true
-        pencilBtn.hidden = true
+        recordSoundBtn.hidden = true
+        playSoundBtn.hidden = true
+        saveSoundBtn.hidden = true
     }
     // HIDE BUTTONS ----------------
     
@@ -200,19 +204,80 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         saveImageBtn.hidden = false
         clearSignatureViewBtn.hidden = false
         retakeBtn.hidden = false
-        drawBtn.hidden = false
-        eraserBtn.hidden = false
-        undoBtn.hidden = false
-        pencilBtn.hidden = false
+        recordSoundBtn.hidden = false
+        playSoundBtn.hidden = false
+        saveSoundBtn.hidden = false
     }
     // SHOW BUTTONS ----------------
     
     
     
     
+    // SOUND RECORDER ----------------
+    // audio record n play
+    var soundRecorder : AVAudioRecorder!
+    var soundPlayer : AVAudioPlayer!
+    var AudioFileName = "sound.m4a"
+    
+    let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
+                          AVFormatIDKey : NSNumber(int: Int32(kAudioFormatMPEG4AAC)),
+                          AVNumberOfChannelsKey : NSNumber(int: 1),
+                          AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))]
+
+    //HELPERS
+    func preparePlayer(){
+        do {
+            try soundPlayer = AVAudioPlayer(contentsOfURL: directoryURL()!)
+            soundPlayer.delegate = self
+            soundPlayer.prepareToPlay()
+            soundPlayer.volume = 1.0
+        } catch {
+            print("Error playing")
+        }
+    }
+    
+    func directoryURL() -> NSURL? {
+        let fileManager = NSFileManager.defaultManager()
+        let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentDirectory = urls[0] as NSURL
+        let soundURL = documentDirectory.URLByAppendingPathComponent("sound.m4a")
+        return soundURL
+    }
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        playSoundBtn.enabled = true
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        recordSoundBtn.enabled = true
+        playSoundBtn.setTitle("Play", forState: .Normal)
+    }
+    
+    func setupRecorder(){
+        let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
+        
+        //ask for permission
+        if (audioSession.respondsToSelector(#selector(AVAudioSession.requestRecordPermission(_:)))) {
+            AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
+                if granted {
+                    print("granted")
+                    //set category and activate recorder session
+                    do {
+                        try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                        try self.soundRecorder = AVAudioRecorder(URL: self.directoryURL()!, settings: self.recordSettings)
+                        self.soundRecorder.prepareToRecord()
+                    } catch {
+                        print("Error Recording");
+                    }
+                }
+            })
+        }
+    }
+    // SOUND RECORDER ----------------
     
     
     
+
     
     
 /*
@@ -257,6 +322,9 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         
         // GET IMAGE FROM CAMERA
         imageView.image = image
+        
+        // RECORD SOUND
+        setupRecorder()
         
         
     }
