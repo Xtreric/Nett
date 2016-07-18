@@ -14,20 +14,19 @@ let albumName = "Nett"
 
 class PreviewImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
-    //@IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var imageView: PhotoView!
     @IBOutlet weak var signatureView: SignatureView!
+    @IBOutlet weak var mergeView: SignatureView!
+
     @IBOutlet weak var saveImageBtn: UIButton!
     @IBOutlet weak var clearSignatureViewBtn: UIButton!
     @IBOutlet weak var retakeBtn: UIButton!
 
-    
     @IBOutlet weak var drawBtn: UIButton!
     @IBOutlet weak var eraserBtn: UIButton!
     @IBOutlet weak var undoBtn: UIButton!
     @IBOutlet weak var pencilBtn: UIButton!
-    @IBOutlet weak var cameraBtn: UIButton!
     
     // HIDE STATUS BAR
     override func prefersStatusBarHidden() -> Bool {
@@ -46,10 +45,33 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // SAVE IMAGE ----------------
     @IBAction func saveImageBtn_Click(sender: AnyObject) {
         print("drawBtn_Click")
-        UIImageWriteToSavedPhotosAlbum(self.signatureView.getSignatureImage(), nil, nil, nil)
+        
+        // hide all buttons
+        hideButtons()
+
+        
+        let layer = UIApplication.sharedApplication().keyWindow!.layer
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale); // reconsider size property for your screenshot
+        
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        //set finalImage to IBOulet UIImageView
+        mergeView.image = screenshot
+        
+        
+        
         // save original image
         UIImageWriteToSavedPhotosAlbum(self.imageView.getSignatureImage(), nil, nil, nil)
-
+        // save merge image
+        UIImageWriteToSavedPhotosAlbum(self.mergeView.getSignatureImage(), nil, nil, nil)
+        
+        
+        // show all buttons
+        showButtons()
+        
         // Show alert message: Image Saved
         let alert = UIAlertController(title: "Image Saved", message: "Successful!", preferredStyle: UIAlertControllerStyle.Alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -57,6 +79,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+
     // CLEAR SIGNATURE VIEW ----------------
     @IBAction func clearSignatureViewBtn_Click(sender: AnyObject) {
         print("clearSignatureViewBtn_Click")
@@ -138,7 +161,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         // 圓滑線型
         CGContextSetLineCap(context, CGLineCap.Round)
         // 線寬
-        CGContextSetLineWidth(context, 8)
+        CGContextSetLineWidth(context, 6)
         // 描繪線顏色
         CGContextSetRGBStrokeColor(context, 255, 251, 0, 1)
         // 獲取觸控點座標
@@ -159,14 +182,36 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     
-    /*
+    
     // HIDE BUTTONS ----------------
-    func hideEditor() {
-        drawBtn.hidden = !drawBtn.hidden
-        eraserBtn.hidden = !eraserBtn.hidden
+    func hideButtons() {
+        saveImageBtn.hidden = true
+        clearSignatureViewBtn.hidden = true
+        retakeBtn.hidden = true
+        drawBtn.hidden = true
+        eraserBtn.hidden = true
+        undoBtn.hidden = true
+        pencilBtn.hidden = true
     }
     // HIDE BUTTONS ----------------
-    */
+    
+    // SHOW BUTTONS ----------------
+    func showButtons() {
+        saveImageBtn.hidden = false
+        clearSignatureViewBtn.hidden = false
+        retakeBtn.hidden = false
+        drawBtn.hidden = false
+        eraserBtn.hidden = false
+        undoBtn.hidden = false
+        pencilBtn.hidden = false
+    }
+    // SHOW BUTTONS ----------------
+    
+    
+    
+    
+    
+    
     
     
     

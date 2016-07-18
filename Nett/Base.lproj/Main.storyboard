@@ -48,6 +48,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-5V-egA" customClass="SignatureView" customModule="Nett" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST7-si-rAi" customClass="SignatureView" customModule="Nett" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-ex-DS4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Draw">
@@ -130,9 +133,12 @@
                             <constraint firstItem="xxu-u0-FXG" firstAttribute="leading" secondItem="zFi-ex-DS4" secondAttribute="trailing" constant="35" id="QoB-Fx-ISG"/>
                             <constraint firstItem="hEI-sa-2ic" firstAttribute="leading" secondItem="xxu-u0-FXG" secondAttribute="trailing" constant="37" id="SmF-x3-sDd"/>
                             <constraint firstItem="zFi-ex-DS4" firstAttribute="leading" secondItem="eFh-DB-fFh" secondAttribute="trailing" constant="35" id="Ua6-b5-FoG"/>
+                            <constraint firstItem="ST7-si-rAi" firstAttribute="top" secondItem="NlL-Pw-GxJ" secondAttribute="topMargin" id="V58-08-EXB"/>
                             <constraint firstItem="QzA-Am-fMI" firstAttribute="top" secondItem="eO9-5V-egA" secondAttribute="bottom" id="XPm-Dw-bTk"/>
+                            <constraint firstItem="ST7-si-rAi" firstAttribute="leading" secondItem="NlL-Pw-GxJ" secondAttribute="leadingMargin" constant="-20" id="Y5Z-Pb-VhF"/>
                             <constraint firstItem="eFh-DB-fFh" firstAttribute="top" secondItem="9hR-VB-4Pl" secondAttribute="bottom" constant="666" id="Z3J-LL-ZQj"/>
                             <constraint firstItem="hEI-sa-2ic" firstAttribute="leading" secondItem="xxu-u0-FXG" secondAttribute="trailing" constant="37" id="Zvd-VY-QYj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ST7-si-rAi" secondAttribute="trailing" constant="-20" id="eXp-tP-3q6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eyR-Ss-JXx" secondAttribute="trailing" constant="317" id="fTb-Qx-qKz"/>
                             <constraint firstItem="QzA-Am-fMI" firstAttribute="top" secondItem="zFi-ex-DS4" secondAttribute="bottom" constant="20" id="gS2-l1-eLu"/>
                             <constraint firstItem="p50-ff-Psn" firstAttribute="leading" secondItem="NlL-Pw-GxJ" secondAttribute="leadingMargin" id="hIi-cD-qHJ"/>
@@ -145,6 +151,7 @@
                             <constraint firstItem="ngt-jQ-Wwh" firstAttribute="leading" secondItem="NlL-Pw-GxJ" secondAttribute="leadingMargin" id="qJ2-Xp-SPc"/>
                             <constraint firstItem="eFh-DB-fFh" firstAttribute="leading" secondItem="NlL-Pw-GxJ" secondAttribute="leadingMargin" constant="83" id="qN1-cA-ki0"/>
                             <constraint firstItem="hEI-sa-2ic" firstAttribute="top" secondItem="9hR-VB-4Pl" secondAttribute="bottom" constant="666" id="qb8-se-j33"/>
+                            <constraint firstItem="QzA-Am-fMI" firstAttribute="top" secondItem="ST7-si-rAi" secondAttribute="bottom" id="rYL-kr-YtZ"/>
                             <constraint firstItem="eyR-Ss-JXx" firstAttribute="leading" secondItem="NlL-Pw-GxJ" secondAttribute="leadingMargin" id="uMX-g8-H6w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7CJ-IV-zew" secondAttribute="trailing" constant="-20" id="uyP-hL-BSP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ngt-jQ-Wwh" secondAttribute="trailing" constant="328" id="vxN-qw-GXl"/>
@@ -155,6 +162,7 @@
                             <mask key="subviews">
                                 <exclude reference="7CJ-IV-zew"/>
                                 <exclude reference="eO9-5V-egA"/>
+                                <exclude reference="ST7-si-rAi"/>
                                 <exclude reference="zFi-ex-DS4"/>
                                 <exclude reference="xxu-u0-FXG"/>
                                 <exclude reference="hEI-sa-2ic"/>
@@ -167,6 +175,9 @@
                                 <exclude reference="JVs-gP-o8p"/>
                                 <exclude reference="jMF-LR-MCU"/>
                                 <exclude reference="uyP-hL-BSP"/>
+                                <exclude reference="V58-08-EXB"/>
+                                <exclude reference="Y5Z-Pb-VhF"/>
+                                <exclude reference="eXp-tP-3q6"/>
                                 <exclude reference="1JH-Zd-K4o"/>
                                 <exclude reference="Gma-RM-dmU"/>
                                 <exclude reference="zWC-eM-Gbh"/>
@@ -196,6 +207,7 @@
                                 <exclude reference="lYM-Tx-ReW"/>
                                 <exclude reference="nzj-6A-385"/>
                                 <exclude reference="pE6-Gx-NIq"/>
+                                <exclude reference="rYL-kr-YtZ"/>
                                 <exclude reference="1AL-Tg-IlY"/>
                                 <exclude reference="SmF-x3-sDd"/>
                                 <exclude reference="Zvd-VY-QYj"/>
@@ -206,6 +218,7 @@
                             <mask key="subviews">
                                 <include reference="7CJ-IV-zew"/>
                                 <include reference="eO9-5V-egA"/>
+                                <include reference="ST7-si-rAi"/>
                                 <include reference="zFi-ex-DS4"/>
                                 <include reference="xxu-u0-FXG"/>
                                 <include reference="hEI-sa-2ic"/>
@@ -218,6 +231,9 @@
                                 <include reference="JVs-gP-o8p"/>
                                 <include reference="jMF-LR-MCU"/>
                                 <include reference="uyP-hL-BSP"/>
+                                <include reference="V58-08-EXB"/>
+                                <include reference="Y5Z-Pb-VhF"/>
+                                <include reference="eXp-tP-3q6"/>
                                 <include reference="1JH-Zd-K4o"/>
                                 <include reference="Gma-RM-dmU"/>
                                 <include reference="zWC-eM-Gbh"/>
@@ -247,6 +263,7 @@
                                 <include reference="lYM-Tx-ReW"/>
                                 <include reference="nzj-6A-385"/>
                                 <include reference="pE6-Gx-NIq"/>
+                                <include reference="rYL-kr-YtZ"/>
                                 <include reference="1AL-Tg-IlY"/>
                                 <include reference="SmF-x3-sDd"/>
                                 <include reference="Zvd-VY-QYj"/>
@@ -260,6 +277,7 @@
                         <outlet property="drawBtn" destination="zFi-ex-DS4" id="qqk-yM-Vwf"/>
                         <outlet property="eraserBtn" destination="xxu-u0-FXG" id="0UL-cA-En4"/>
                         <outlet property="imageView" destination="7CJ-IV-zew" id="rEr-NH-alu"/>
+                        <outlet property="mergeView" destination="ST7-si-rAi" id="tPx-nP-bcp"/>
                         <outlet property="pencilBtn" destination="eFh-DB-fFh" id="ys9-Fq-42N"/>
                         <outlet property="retakeBtn" destination="eyR-Ss-JXx" id="hgP-Uf-ifD"/>
                         <outlet property="saveImageBtn" destination="hEI-sa-2ic" id="oXd-qj-T8p"/>
