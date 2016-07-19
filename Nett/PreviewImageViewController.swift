@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import AVFoundation
+import CoreData
 
 let albumName = "Nett"
 
@@ -16,8 +17,8 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     @IBOutlet weak var imageView: PhotoView!
-    @IBOutlet weak var signatureView: SignatureView!
-    @IBOutlet weak var mergeView: SignatureView!
+    @IBOutlet var signatureView: SignatureView!
+    @IBOutlet weak var mergeView: PhotoView!
 
     @IBOutlet weak var saveImageBtn: UIButton!
     @IBOutlet weak var clearSignatureViewBtn: UIButton!
@@ -27,6 +28,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var playSoundBtn: UIButton!
     @IBOutlet weak var saveSoundBtn: UIButton!
     
+    @IBOutlet weak var colorChangeBtn: UIButton!
 
     
     // HIDE STATUS BAR
@@ -83,7 +85,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // CLEAR SIGNATURE VIEW ----------------
     @IBAction func clearSignatureViewBtn_Click(sender: AnyObject) {
         print("clearSignatureViewBtn_Click")
-        signatureView.image = nil
+        self.signatureView.clearSignature()
     }
     
     // RETAKE ----------------
@@ -112,7 +114,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
             sender.setTitle("Stop", forState: .Normal)
             preparePlayer()
             soundPlayer.play()
-        } else{
+        }else{
             soundPlayer.stop()
             sender.setTitle("Play", forState: .Normal)
         }
@@ -121,7 +123,17 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // SAVE SOUND ----------------
     @IBAction func saveSoundBtn_Click(sender: AnyObject) {
         print("saveSoundBtn_Click")
+        shakeRecordSoundButton()
     }
+    
+    
+    @IBAction func colorChangeBtn_Click(sender: AnyObject) {
+        print("colorChangeBtn_Click")
+        self.signatureView.defaultColor = UIColor.cyanColor()
+
+    }
+    
+    
     
     
     
@@ -138,54 +150,6 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         super.init(coder: aDecoder)
     }
     // GET IMAGE FROM CAMERA ----------------
-    
-    
-
-    // DRAWING FUNCTION ----------------
-    var start: CGPoint?
-    
-    // 觸控開始
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let touch = touches.first as UITouch!
-        start = touch.locationInView(self.signatureView)
-    }
-    // 觸控移動
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let touch = touches.first as UITouch!
-        let end = touch.locationInView(self.signatureView)
-        
-        if let s = self.start {
-            draw(s, end: end)
-        }
-        self.start = end
-    }
-    
-    func draw(start: CGPoint, end: CGPoint) {
-        UIGraphicsBeginImageContext(self.signatureView.frame.size)
-        //初始化
-        let context = UIGraphicsGetCurrentContext()
-        
-        signatureView?.image?.drawInRect(CGRect(x: 0, y: 0, width: signatureView.frame.width, height: signatureView.frame.height))
-        
-        // 圓滑線型
-        CGContextSetLineCap(context, CGLineCap.Round)
-        // 線寬
-        CGContextSetLineWidth(context, 4)
-        // 描繪線顏色
-        CGContextSetRGBStrokeColor(context, 255, 251, 0, 1)
-        // 獲取觸控點座標
-        CGContextBeginPath(context)
-        CGContextMoveToPoint(context, start.x, start.y)
-        CGContextAddLineToPoint(context, end.x, end.y)
-        // 將Path描繪出
-        CGContextStrokePath(context)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        signatureView.image = newImage
-        
-    }
-    // DRAWING FUNCTION ----------------
-
 
     
     // HIDE BUTTONS ----------------
@@ -198,6 +162,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         saveSoundBtn.hidden = true
     }
     // HIDE BUTTONS ----------------
+    
     
     // SHOW BUTTONS ----------------
     func showButtons() {
@@ -274,25 +239,34 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         }
     }
     // SOUND RECORDER ----------------
+
     
+    // SHAKE BUTTON: PLAY SOUND BUTTON ----------------
+    func shakePlaySoundButton() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(playSoundBtn.center.x - 10, playSoundBtn.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(playSoundBtn.center.x + 10, playSoundBtn.center.y))
+        playSoundBtn.layer.addAnimation(animation, forKey: "position")
+    }
+    // SHAKE BUTTON: PLAY SOUND BUTTON ----------------
+    
+    // SHAKE BUTTON: SAVE SOUND BUTTON ----------------
+    func shakeRecordSoundButton() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(saveSoundBtn.center.x - 10, saveSoundBtn.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(saveSoundBtn.center.x + 10, saveSoundBtn.center.y))
+        saveSoundBtn.layer.addAnimation(animation, forKey: "position")
+    }
+    // SHAKE BUTTON: SAVE SOUND BUTTON ----------------
     
     
 
-    
-    
-/*
-     func saveImage (image: UIImage, path: String ) -> Bool{
-     
-     let pngImageData = UIImagePNGRepresentation(drawImageView.image!)
-     //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
-     
-     print("!!!saving image at:  \(path)")
-     
-     let result = pngImageData!.writeToFile(path, atomically: true)
-     
-     return result
-     }
-*/
     
     
 
@@ -314,6 +288,28 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         presentViewController(alertController, animated: true, completion: nil)
     }
 */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -344,3 +340,4 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
 }
+

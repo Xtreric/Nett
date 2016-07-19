@@ -1,6 +1,6 @@
 //
 //  SignatureView.swift
-//  Nett
+//  SignatureApp
 //
 //  Created by Phil Wright on 4/10/16.
 //  Copyright © 2016 Touchopia, LLC. All rights reserved.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SignatureView: UIImageView {
+class SignatureView: UIView {
     
-    let defaultLineWidth:CGFloat = 7.0
+    let defaultLineWidth:CGFloat = 6
 
-    let defaultColor:UIColor = UIColor.redColor()
+    var defaultColor:UIColor = UIColor.yellowColor()
+    //let defaultColor:UIColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
     
     let beizerPath = UIBezierPath()
     
@@ -30,6 +31,7 @@ class SignatureView: UIImageView {
         // Set initial color for drawing
         defaultColor.setFill()
         defaultColor.setStroke()
+        
         self.beizerPath.lineWidth = self.defaultLineWidth
         self.beizerPath.stroke()
     }
@@ -47,9 +49,6 @@ class SignatureView: UIImageView {
             beizerPath.moveToPoint(startPoint)
             beizerPath.addLineToPoint(endPoint)
         }
-        
-        print("started drawing")
-        
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -72,8 +71,6 @@ class SignatureView: UIImageView {
                 pointsArray[1] = pointsArray[4]
                 
                 self.control = 1
-                
-                print("moved")
             }
         }
     }
@@ -96,12 +93,12 @@ class SignatureView: UIImageView {
     
     func drawBitmapImage() {
         
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 0)
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, 1)
         
         if let image = self.signatureImage {
             
             let rectpath = UIBezierPath(rect: self.bounds)
-            
+
             self.backgroundColor?.setFill()
             rectpath.fill()
             image.drawAtPoint(CGPointZero)

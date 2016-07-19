@@ -10,6 +10,7 @@
 		3106DF601D3CC68D00049354 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
 		3106DF621D3CC69400049354 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF611D3CC69400049354 /* AudioToolbox.framework */; };
 		3106DF641D3CC69900049354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF631D3CC69900049354 /* QuartzCore.framework */; };
+		3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311558191D3E0BA600EA83B3 /* SignatureView.swift */; };
 		31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D001D389A450081C7E1 /* AppDelegate.swift */; };
 		31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D021D389A450081C7E1 /* ViewController.swift */; };
 		31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D041D389A450081C7E1 /* Main.storyboard */; };
@@ -35,7 +36,6 @@
 		31AA3D5A1D38DA2C0081C7E1 /* EraserBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D541D38DA2C0081C7E1 /* EraserBrush.swift */; };
 		31AA3D5D1D38DAC60081C7E1 /* BaseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */; };
 		31AA3D5E1D38DAC60081C7E1 /* drawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */; };
-		31AA3D641D390BB10081C7E1 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D631D390BB10081C7E1 /* SignatureView.swift */; };
 		31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D651D391DC80081C7E1 /* PhotoView.swift */; };
 		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,7 @@
 /* Begin PBXFileReference section */
 		3106DF611D3CC69400049354 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3106DF631D3CC69900049354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		311558191D3E0BA600EA83B3 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		31AA3CFD1D389A450081C7E1 /* Nett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA3D001D389A450081C7E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AA3D021D389A450081C7E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		31AA3D541D38DA2C0081C7E1 /* EraserBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EraserBrush.swift; sourceTree = "<group>"; };
 		31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBrush.swift; sourceTree = "<group>"; };
 		31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawImageView.swift; sourceTree = "<group>"; };
-		31AA3D631D390BB10081C7E1 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
 		31AA3D651D391DC80081C7E1 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 				31AA3D001D389A450081C7E1 /* AppDelegate.swift */,
 				31AA3D021D389A450081C7E1 /* ViewController.swift */,
 				31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */,
-				31AA3D631D390BB10081C7E1 /* SignatureView.swift */,
 				31AA3D651D391DC80081C7E1 /* PhotoView.swift */,
+				311558191D3E0BA600EA83B3 /* SignatureView.swift */,
 				31AA3D041D389A450081C7E1 /* Main.storyboard */,
 				31AA3D071D389A450081C7E1 /* Assets.xcassets */,
 				31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */,
@@ -420,7 +420,6 @@
 				31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */,
 				31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */,
 				31AA3D581D38DA2C0081C7E1 /* RectangleBrush.swift in Sources */,
-				31AA3D641D390BB10081C7E1 /* SignatureView.swift in Sources */,
 				31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */,
 				31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */,
 				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
@@ -430,6 +429,7 @@
 				31AA3D5A1D38DA2C0081C7E1 /* EraserBrush.swift in Sources */,
 				31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */,
 				31AA3D551D38DA2C0081C7E1 /* PencilBrush.swift in Sources */,
+				3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */,
 				31AA3D591D38DA2C0081C7E1 /* EllipseBrush.swift in Sources */,
 				31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */,
 				31AA3D5E1D38DAC60081C7E1 /* drawImageView.swift in Sources */,
