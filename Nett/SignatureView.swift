@@ -13,7 +13,7 @@ class SignatureView: UIView {
     let defaultLineWidth:CGFloat = 6
 
     var defaultColor:UIColor = UIColor.yellowColor()
-    //let defaultColor:UIColor = UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
+    //UIColor(red: 1, green: 165/255, blue: 0, alpha: 1)
     
     let beizerPath = UIBezierPath()
     
@@ -24,17 +24,19 @@ class SignatureView: UIView {
     var control: Int = 0
     
     override func drawRect(rect: CGRect) {
-        
+
         self.signatureImage?.drawInRect(rect)
         self.beizerPath.stroke()
         
         // Set initial color for drawing
         defaultColor.setFill()
         defaultColor.setStroke()
-        
+
         self.beizerPath.lineWidth = self.defaultLineWidth
         self.beizerPath.stroke()
+        
     }
+
     
     //MARK: Touches Methods
     
@@ -110,6 +112,7 @@ class SignatureView: UIView {
             UIGraphicsEndImageContext()
         }
     }
+    
     
     func getSignatureImage() -> UIImage {
         

@@ -17,7 +17,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     @IBOutlet weak var imageView: PhotoView!
-    @IBOutlet var signatureView: SignatureView!
+    @IBOutlet weak var signatureView: SignatureView!
     @IBOutlet weak var mergeView: PhotoView!
 
     @IBOutlet weak var saveImageBtn: UIButton!
@@ -30,6 +30,17 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBOutlet weak var colorChangeBtn: UIButton!
 
+ 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // GET IMAGE FROM CAMERA
+        imageView.image = image
+        
+        // RECORD SOUND
+        setupRecorder()
+    }
+    
     
     // HIDE STATUS BAR
     override func prefersStatusBarHidden() -> Bool {
@@ -52,7 +63,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         // hide all buttons
         hideButtons()
 
-        
+        // screenshot
         let layer = UIApplication.sharedApplication().keyWindow!.layer
         let scale = UIScreen.mainScreen().scale
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale); // reconsider size property for your screenshot
@@ -126,11 +137,11 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         shakeRecordSoundButton()
     }
     
-    
+    // CHANGE COLOR ----------------
     @IBAction func colorChangeBtn_Click(sender: AnyObject) {
         print("colorChangeBtn_Click")
-        self.signatureView.defaultColor = UIColor.cyanColor()
-
+        //self.signatureView.defaultColor = UIColor.cyanColor()
+        
     }
     
     
@@ -291,39 +302,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // GET IMAGE FROM CAMERA
-        imageView.image = image
-        
-        // RECORD SOUND
-        setupRecorder()
-        
-        
-    }
+
     
     
     

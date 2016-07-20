@@ -28,14 +28,6 @@
 		31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */; };
 		31AA3D441D38B56A0081C7E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
 		31AA3D461D38B5740081C7E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D451D38B5740081C7E1 /* AVFoundation.framework */; };
-		31AA3D551D38DA2C0081C7E1 /* PencilBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D4F1D38DA2C0081C7E1 /* PencilBrush.swift */; };
-		31AA3D561D38DA2C0081C7E1 /* LineBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D501D38DA2C0081C7E1 /* LineBrush.swift */; };
-		31AA3D571D38DA2C0081C7E1 /* DashLineBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D511D38DA2C0081C7E1 /* DashLineBrush.swift */; };
-		31AA3D581D38DA2C0081C7E1 /* RectangleBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D521D38DA2C0081C7E1 /* RectangleBrush.swift */; };
-		31AA3D591D38DA2C0081C7E1 /* EllipseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D531D38DA2C0081C7E1 /* EllipseBrush.swift */; };
-		31AA3D5A1D38DA2C0081C7E1 /* EraserBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D541D38DA2C0081C7E1 /* EraserBrush.swift */; };
-		31AA3D5D1D38DAC60081C7E1 /* BaseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */; };
-		31AA3D5E1D38DAC60081C7E1 /* drawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */; };
 		31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D651D391DC80081C7E1 /* PhotoView.swift */; };
 		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
@@ -84,14 +76,6 @@
 		31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		31AA3D431D38B56A0081C7E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		31AA3D451D38B5740081C7E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		31AA3D4F1D38DA2C0081C7E1 /* PencilBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PencilBrush.swift; sourceTree = "<group>"; };
-		31AA3D501D38DA2C0081C7E1 /* LineBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBrush.swift; sourceTree = "<group>"; };
-		31AA3D511D38DA2C0081C7E1 /* DashLineBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLineBrush.swift; sourceTree = "<group>"; };
-		31AA3D521D38DA2C0081C7E1 /* RectangleBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleBrush.swift; sourceTree = "<group>"; };
-		31AA3D531D38DA2C0081C7E1 /* EllipseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipseBrush.swift; sourceTree = "<group>"; };
-		31AA3D541D38DA2C0081C7E1 /* EraserBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EraserBrush.swift; sourceTree = "<group>"; };
-		31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBrush.swift; sourceTree = "<group>"; };
-		31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawImageView.swift; sourceTree = "<group>"; };
 		31AA3D651D391DC80081C7E1 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,8 +139,6 @@
 				31AA3D071D389A450081C7E1 /* Assets.xcassets */,
 				31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */,
 				31AA3D0C1D389A450081C7E1 /* Info.plist */,
-				31AA3D4E1D38DA120081C7E1 /* Brushes */,
-				31AA3D491D38D2060081C7E1 /* Base */,
 			);
 			path = Nett;
 			sourceTree = "<group>";
@@ -216,28 +198,6 @@
 				31AA3D391D38B4720081C7E1 /* Info.plist */,
 			);
 			path = NettTests;
-			sourceTree = "<group>";
-		};
-		31AA3D491D38D2060081C7E1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				31AA3D5B1D38DAC60081C7E1 /* BaseBrush.swift */,
-				31AA3D5C1D38DAC60081C7E1 /* drawImageView.swift */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		31AA3D4E1D38DA120081C7E1 /* Brushes */ = {
-			isa = PBXGroup;
-			children = (
-				31AA3D4F1D38DA2C0081C7E1 /* PencilBrush.swift */,
-				31AA3D501D38DA2C0081C7E1 /* LineBrush.swift */,
-				31AA3D511D38DA2C0081C7E1 /* DashLineBrush.swift */,
-				31AA3D521D38DA2C0081C7E1 /* RectangleBrush.swift */,
-				31AA3D531D38DA2C0081C7E1 /* EllipseBrush.swift */,
-				31AA3D541D38DA2C0081C7E1 /* EraserBrush.swift */,
-			);
-			name = Brushes;
 			sourceTree = "<group>";
 		};
 		9ADACEB90B6739D96CB2D280 /* Pods */ = {
@@ -419,20 +379,12 @@
 				31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */,
 				31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */,
 				31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */,
-				31AA3D581D38DA2C0081C7E1 /* RectangleBrush.swift in Sources */,
 				31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */,
 				31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */,
 				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
-				31AA3D571D38DA2C0081C7E1 /* DashLineBrush.swift in Sources */,
-				31AA3D561D38DA2C0081C7E1 /* LineBrush.swift in Sources */,
-				31AA3D5D1D38DAC60081C7E1 /* BaseBrush.swift in Sources */,
-				31AA3D5A1D38DA2C0081C7E1 /* EraserBrush.swift in Sources */,
 				31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */,
-				31AA3D551D38DA2C0081C7E1 /* PencilBrush.swift in Sources */,
 				3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */,
-				31AA3D591D38DA2C0081C7E1 /* EllipseBrush.swift in Sources */,
 				31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */,
-				31AA3D5E1D38DAC60081C7E1 /* drawImageView.swift in Sources */,
 				31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@
 #import "ImageViewController.h"
 #import "VideoViewController.h"
 #import "Nett-Swift.h"
-#warning - replace SimpleCameraDemo with your ProjectName
+//#warning - replace SimpleCameraDemo with your ProjectName
 
 @interface HomeViewController ()
 @property (strong, nonatomic) LLSimpleCamera *camera;
@@ -206,7 +206,7 @@
                 [camera stop];
                 
                 // show the image
-#warning If you would like to change the name of the segue, change it here
+//#warning If you would like to change the name of the segue, change it here
                 [self performSegueWithIdentifier:@"Show Image Preview" sender:image];
             }
             else {
@@ -275,7 +275,7 @@
 
 #pragma mark - Navigation
 
-#warning - Change your according image view controller here after taking the photo
+//#warning - Change your according image view controller here after taking the photo
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
