@@ -10,7 +10,6 @@
 #import "ViewUtils.h"
 #import "UIImage+Crop.h"
 
-
 @interface ImageViewController ()
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) UIImageView *imageView;
@@ -50,7 +49,7 @@
     self.infoLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:13];
     self.infoLabel.textAlignment = NSTextAlignmentCenter;
     self.infoLabel.text = info;
-//    [self.view addSubview:self.infoLabel];
+    [self.view addSubview:self.infoLabel];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
     [self.view addGestureRecognizer:tapGesture];
@@ -81,3 +80,4 @@
 }
 
 @end
+

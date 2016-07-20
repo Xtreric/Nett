@@ -11,7 +11,7 @@
 #import "ImageViewController.h"
 #import "VideoViewController.h"
 #import "Nett-Swift.h"
-//#warning - replace SimpleCameraDemo with your ProjectName
+
 
 @interface HomeViewController ()
 @property (strong, nonatomic) LLSimpleCamera *camera;
@@ -24,9 +24,10 @@
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -36,7 +37,7 @@
     
     // create camera vc
     self.camera = [[LLSimpleCamera alloc] initWithQuality:AVCaptureSessionPresetHigh
-                                                 position:CameraPositionBack
+                                                 position:LLCameraPositionRear
                                              videoEnabled:YES];
     
     // attach to a view controller
@@ -44,7 +45,7 @@
     
     // read: http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload
     // you probably will want to set this to YES, if you are going view the image outside iOS.
-    self.camera.fixOrientationAfterCapture = YES;
+    self.camera.fixOrientationAfterCapture = NO;
     
     // take the required actions on a device change
     __weak typeof(self) weakSelf = self;
@@ -54,9 +55,9 @@
         
         // device changed, check if flash is available
         if([camera isFlashAvailable]) {
-            weakSelf.flashButton.hidden = YES;
+            weakSelf.flashButton.hidden = NO;
             
-            if(camera.flash == CameraFlashOff) {
+            if(camera.flash == LLCameraFlashOff) {
                 weakSelf.flashButton.selected = NO;
             }
             else {
@@ -98,7 +99,6 @@
     // ----- camera buttons -------- //
     
     // snap button to capture image
-    self.snapButton.hidden = YES;
     self.snapButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.snapButton.frame = CGRectMake(0, 0, 70.0f, 70.0f);
     self.snapButton.clipsToBounds = YES;
@@ -120,15 +120,16 @@
     [self.flashButton addTarget:self action:@selector(flashButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.flashButton];
     
-    // button to toggle camera positions
-    self.switchButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.switchButton.frame = CGRectMake(0, 0, 29.0f + 20.0f, 22.0f + 20.0f);
-    self.switchButton.tintColor = [UIColor whiteColor];
-    [self.switchButton setImage:[UIImage imageNamed:@"camera-switch.png"] forState:UIControlStateNormal];
-    self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-    [self.switchButton addTarget:self action:@selector(switchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.switchButton];
-    
+    if([LLSimpleCamera isFrontCameraAvailable] && [LLSimpleCamera isRearCameraAvailable]) {
+        // button to toggle camera positions
+        self.switchButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.switchButton.frame = CGRectMake(0, 0, 29.0f + 20.0f, 22.0f + 20.0f);
+        self.switchButton.tintColor = [UIColor whiteColor];
+        [self.switchButton setImage:[UIImage imageNamed:@"camera-switch.png"] forState:UIControlStateNormal];
+        self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+        [self.switchButton addTarget:self action:@selector(switchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.switchButton];
+    }
     
     self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Picture",@"Video"]];
     self.segmentedControl.frame = CGRectMake(12.0f, screenRect.size.height - 67.0f, 120.0f, 32.0f);
@@ -136,57 +137,44 @@
     self.segmentedControl.tintColor = [UIColor whiteColor];
     [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.segmentedControl];
-    
-    
-    
-    // ERIC : PUT CANCEL BUTTON HERE
-    
-    
-    
-    
-    
 }
 
-- (void)segmentedControlValueChanged:(UISegmentedControl *)control {
+- (void)segmentedControlValueChanged:(UISegmentedControl *)control
+{
     NSLog(@"Segment value changed!");
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     // start the camera
     [self.camera start];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-
-    // stop the camera
-    [self.camera stop];
-}
-
 /* camera button methods */
 
-- (void)switchButtonPressed:(UIButton *)button {
+- (void)switchButtonPressed:(UIButton *)button
+{
     [self.camera togglePosition];
 }
 
-- (NSURL *)applicationDocumentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                   inDomains:NSUserDomainMask] lastObject];
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-- (void)flashButtonPressed:(UIButton *)button {
-    
-    if(self.camera.flash == CameraFlashOff) {
-        BOOL done = [self.camera updateFlashMode:CameraFlashOn];
+- (void)flashButtonPressed:(UIButton *)button
+{
+    if(self.camera.flash == LLCameraFlashOff) {
+        BOOL done = [self.camera updateFlashMode:LLCameraFlashOn];
         if(done) {
             self.flashButton.selected = YES;
             self.flashButton.tintColor = [UIColor yellowColor];
         }
     }
     else {
-        BOOL done = [self.camera updateFlashMode:CameraFlashOff];
+        BOOL done = [self.camera updateFlashMode:LLCameraFlashOff];
         if(done) {
             self.flashButton.selected = NO;
             self.flashButton.tintColor = [UIColor whiteColor];
@@ -195,27 +183,27 @@
 }
 
 - (void)snapButtonPressed:(UIButton *)button {
+    __weak typeof(self) weakSelf = self;
     
     if(self.segmentedControl.selectedSegmentIndex == 0) {
         // capture
         [self.camera capture:^(LLSimpleCamera *camera, UIImage *image, NSDictionary *metadata, NSError *error) {
             if(!error) {
+                ImageViewController *imageVC = [[ImageViewController alloc] initWithImage:image];
+                [weakSelf presentViewController:imageVC animated:NO completion:nil];
+
                 
-                // we should stop the camera, since we don't need it anymore. We will open a new vc.
-                // this very important, otherwise you may experience memory crashes
-                [camera stop];
                 
                 // show the image
-//#warning If you would like to change the name of the segue, change it here
+#warning If you would like to change the name of the segue, change it here
                 [self performSegueWithIdentifier:@"Show Image Preview" sender:image];
-            }
-            else {
+                
+            } else {
                 NSLog(@"An error has occured: %@", error);
             }
         } exactSeenImage:YES];
-    }
-    else {
         
+    } else {
         if(!self.camera.isRecording) {
             self.segmentedControl.hidden = YES;
             self.flashButton.hidden = YES;
@@ -227,9 +215,12 @@
             // start recording
             NSURL *outputURL = [[[self applicationDocumentsDirectory]
                                  URLByAppendingPathComponent:@"test1"] URLByAppendingPathExtension:@"mov"];
-            [self.camera startRecordingWithOutputUrl:outputURL];
-        }
-        else {
+            [self.camera startRecordingWithOutputUrl:outputURL didRecord:^(LLSimpleCamera *camera, NSURL *outputFileUrl, NSError *error) {
+                VideoViewController *vc = [[VideoViewController alloc] initWithVideoUrl:outputFileUrl];
+                [self.navigationController pushViewController:vc animated:YES];
+            }];
+            
+        } else {
             self.segmentedControl.hidden = NO;
             self.flashButton.hidden = NO;
             self.switchButton.hidden = NO;
@@ -237,45 +228,46 @@
             self.snapButton.layer.borderColor = [UIColor whiteColor].CGColor;
             self.snapButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
             
-            [self.camera stopRecording:^(LLSimpleCamera *camera, NSURL *outputFileUrl, NSError *error) {
-                VideoViewController *vc = [[VideoViewController alloc] initWithVideoUrl:outputFileUrl];
-                [self.navigationController pushViewController:vc animated:YES];
-            }];
+            [self.camera stopRecording];
         }
     }
 }
 
 /* other lifecycle methods */
-- (void)viewWillLayoutSubviews {
+
+- (void)viewWillLayoutSubviews
+{
     [super viewWillLayoutSubviews];
     
     self.camera.view.frame = self.view.contentBounds;
     
     self.snapButton.center = self.view.contentCenter;
-    self.snapButton.bottom = self.view.height - 15;
+    self.snapButton.bottom = self.view.height - 15.0f;
     
     self.flashButton.center = self.view.contentCenter;
     self.flashButton.top = 5.0f;
     
     self.switchButton.top = 5.0f;
     self.switchButton.right = self.view.width - 5.0f;
+    
+    self.segmentedControl.left = 12.0f;
+    self.segmentedControl.bottom = self.view.height - 35.0f;
 }
 
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)prefersStatusBarHidden
+{
     return YES;
 }
 
-- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation
+{
     return UIInterfaceOrientationPortrait;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
-
-#pragma mark - Navigation
-
-//#warning - Change your according image view controller here after taking the photo
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -286,17 +278,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-

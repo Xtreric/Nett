@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>LLSimpleCamera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Nett.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B2D6ACB84A9D7AC65F797992462B99D5</key>
+		<key>33F358F531BB998B5757E302CAD66599</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

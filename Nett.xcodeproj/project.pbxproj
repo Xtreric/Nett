@@ -11,19 +11,20 @@
 		3106DF621D3CC69400049354 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF611D3CC69400049354 /* AudioToolbox.framework */; };
 		3106DF641D3CC69900049354 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3106DF631D3CC69900049354 /* QuartzCore.framework */; };
 		3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311558191D3E0BA600EA83B3 /* SignatureView.swift */; };
+		314B8A501D3F270900DD26CE /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A4B1D3F270900DD26CE /* ViewUtils.m */; };
+		314B8A511D3F270900DD26CE /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A4D1D3F270900DD26CE /* UIImage+Crop.m */; };
+		314B8A521D3F270900DD26CE /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A4F1D3F270900DD26CE /* UIImage+Resize.m */; };
+		314B8A681D3F2AC300DD26CE /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A631D3F2AC300DD26CE /* UIImage+FixOrientation.m */; };
+		314B8A691D3F2AC300DD26CE /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A651D3F2AC300DD26CE /* LLSimpleCamera.m */; };
+		314B8A6A1D3F2AC300DD26CE /* LLSimpleCamera+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8A671D3F2AC300DD26CE /* LLSimpleCamera+Helper.m */; };
 		31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D001D389A450081C7E1 /* AppDelegate.swift */; };
 		31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D021D389A450081C7E1 /* ViewController.swift */; };
 		31AA3D061D389A450081C7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D041D389A450081C7E1 /* Main.storyboard */; };
 		31AA3D081D389A450081C7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D071D389A450081C7E1 /* Assets.xcassets */; };
 		31AA3D0B1D389A450081C7E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31AA3D091D389A450081C7E1 /* LaunchScreen.storyboard */; };
-		31AA3D1B1D38B3E00081C7E1 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */; };
-		31AA3D1C1D38B3E00081C7E1 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */; };
-		31AA3D1D1D38B3E00081C7E1 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */; };
 		31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D201D38B4030081C7E1 /* HomeViewController.m */; };
 		31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D221D38B4030081C7E1 /* ImageViewController.m */; };
 		31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D241D38B4030081C7E1 /* VideoViewController.m */; };
-		31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */; };
-		31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */; };
 		31AA3D381D38B4720081C7E1 /* NettTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D371D38B4720081C7E1 /* NettTests.swift */; };
 		31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D411D38B5440081C7E1 /* PreviewImageViewController.swift */; };
 		31AA3D441D38B56A0081C7E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
@@ -46,6 +47,18 @@
 		3106DF611D3CC69400049354 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3106DF631D3CC69900049354 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		311558191D3E0BA600EA83B3 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		314B8A4A1D3F270900DD26CE /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		314B8A4B1D3F270900DD26CE /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		314B8A4C1D3F270900DD26CE /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		314B8A4D1D3F270900DD26CE /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		314B8A4E1D3F270900DD26CE /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		314B8A4F1D3F270900DD26CE /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		314B8A621D3F2AC300DD26CE /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		314B8A631D3F2AC300DD26CE /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		314B8A641D3F2AC300DD26CE /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
+		314B8A651D3F2AC300DD26CE /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
+		314B8A661D3F2AC300DD26CE /* LLSimpleCamera+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera+Helper.h"; sourceTree = "<group>"; };
+		314B8A671D3F2AC300DD26CE /* LLSimpleCamera+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera+Helper.m"; sourceTree = "<group>"; };
 		31AA3CFD1D389A450081C7E1 /* Nett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA3D001D389A450081C7E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AA3D021D389A450081C7E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,22 +67,12 @@
 		31AA3D0A1D389A450081C7E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31AA3D0C1D389A450081C7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31AA3D141D38B3DF0081C7E1 /* Nett-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nett-Bridging-Header.h"; sourceTree = "<group>"; };
-		31AA3D151D38B3E00081C7E1 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
-		31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
-		31AA3D171D38B3E00081C7E1 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
-		31AA3D191D38B3E00081C7E1 /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
-		31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
 		31AA3D1F1D38B4030081C7E1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		31AA3D201D38B4030081C7E1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		31AA3D211D38B4030081C7E1 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		31AA3D221D38B4030081C7E1 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		31AA3D231D38B4030081C7E1 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		31AA3D241D38B4030081C7E1 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
-		31AA3D291D38B4280081C7E1 /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
-		31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
-		31AA3D2B1D38B4280081C7E1 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
-		31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
 		31AA3D351D38B4720081C7E1 /* NettTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NettTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA3D371D38B4720081C7E1 /* NettTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NettTests.swift; sourceTree = "<group>"; };
 		31AA3D391D38B4720081C7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,12 +159,12 @@
 		31AA3D131D38B3B90081C7E1 /* CameraUltilities */ = {
 			isa = PBXGroup;
 			children = (
-				31AA3D151D38B3E00081C7E1 /* UIImage+Crop.h */,
-				31AA3D161D38B3E00081C7E1 /* UIImage+Crop.m */,
-				31AA3D171D38B3E00081C7E1 /* UIImage+Resize.h */,
-				31AA3D181D38B3E00081C7E1 /* UIImage+Resize.m */,
-				31AA3D191D38B3E00081C7E1 /* ViewUtils.h */,
-				31AA3D1A1D38B3E00081C7E1 /* ViewUtils.m */,
+				314B8A4A1D3F270900DD26CE /* ViewUtils.h */,
+				314B8A4B1D3F270900DD26CE /* ViewUtils.m */,
+				314B8A4C1D3F270900DD26CE /* UIImage+Crop.h */,
+				314B8A4D1D3F270900DD26CE /* UIImage+Crop.m */,
+				314B8A4E1D3F270900DD26CE /* UIImage+Resize.h */,
+				314B8A4F1D3F270900DD26CE /* UIImage+Resize.m */,
 				31AA3D141D38B3DF0081C7E1 /* Nett-Bridging-Header.h */,
 			);
 			name = CameraUltilities;
@@ -183,10 +186,12 @@
 		31AA3D281D38B40F0081C7E1 /* LLSimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
-				31AA3D291D38B4280081C7E1 /* LLSimpleCamera.h */,
-				31AA3D2A1D38B4280081C7E1 /* LLSimpleCamera.m */,
-				31AA3D2B1D38B4280081C7E1 /* UIImage+FixOrientation.h */,
-				31AA3D2C1D38B4280081C7E1 /* UIImage+FixOrientation.m */,
+				314B8A621D3F2AC300DD26CE /* UIImage+FixOrientation.h */,
+				314B8A631D3F2AC300DD26CE /* UIImage+FixOrientation.m */,
+				314B8A641D3F2AC300DD26CE /* LLSimpleCamera.h */,
+				314B8A651D3F2AC300DD26CE /* LLSimpleCamera.m */,
+				314B8A661D3F2AC300DD26CE /* LLSimpleCamera+Helper.h */,
+				314B8A671D3F2AC300DD26CE /* LLSimpleCamera+Helper.m */,
 			);
 			name = LLSimpleCamera;
 			sourceTree = "<group>";
@@ -373,18 +378,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31AA3D1B1D38B3E00081C7E1 /* UIImage+Crop.m in Sources */,
-				31AA3D1D1D38B3E00081C7E1 /* ViewUtils.m in Sources */,
-				31AA3D1C1D38B3E00081C7E1 /* UIImage+Resize.m in Sources */,
+				314B8A501D3F270900DD26CE /* ViewUtils.m in Sources */,
 				31AA3D031D389A450081C7E1 /* ViewController.swift in Sources */,
 				31AA3D011D389A450081C7E1 /* AppDelegate.swift in Sources */,
 				31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */,
-				31AA3D2D1D38B4280081C7E1 /* LLSimpleCamera.m in Sources */,
 				31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */,
+				314B8A691D3F2AC300DD26CE /* LLSimpleCamera.m in Sources */,
 				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
 				31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */,
+				314B8A511D3F270900DD26CE /* UIImage+Crop.m in Sources */,
+				314B8A521D3F270900DD26CE /* UIImage+Resize.m in Sources */,
+				314B8A6A1D3F2AC300DD26CE /* LLSimpleCamera+Helper.m in Sources */,
 				3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */,
-				31AA3D2E1D38B4280081C7E1 /* UIImage+FixOrientation.m in Sources */,
+				314B8A681D3F2AC300DD26CE /* UIImage+FixOrientation.m in Sources */,
 				31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
