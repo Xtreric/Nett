@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIButton *snapButton;
 @property (strong, nonatomic) UIButton *switchButton;
 @property (strong, nonatomic) UIButton *flashButton;
+@property (strong, nonatomic) UIButton *backButton;
 @property (strong, nonatomic) UISegmentedControl *segmentedControl;
 @end
 
@@ -120,6 +121,20 @@
     [self.flashButton addTarget:self action:@selector(flashButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.flashButton];
     
+    // button to back
+    self.backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.backButton.frame = CGRectMake(4.5, 5.5, 16.0f + 20.0f, 24.0f + 20.0f);
+    self.backButton.tintColor = [UIColor whiteColor];
+    [self.backButton setImage:[UIImage imageNamed:@"back_icon.png"] forState:UIControlStateNormal];
+    //self.backButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+    [self.backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.backButton];
+    
+    
+    
+    
+    
+    
     if([LLSimpleCamera isFrontCameraAvailable] && [LLSimpleCamera isRearCameraAvailable]) {
         // button to toggle camera positions
         self.switchButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -182,6 +197,13 @@
     }
 }
 
+- (void)backButtonPressed:(UIButton *)button
+{
+    
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 - (void)snapButtonPressed:(UIButton *)button {
     __weak typeof(self) weakSelf = self;
     
@@ -189,13 +211,8 @@
         // capture
         [self.camera capture:^(LLSimpleCamera *camera, UIImage *image, NSDictionary *metadata, NSError *error) {
             if(!error) {
-                ImageViewController *imageVC = [[ImageViewController alloc] initWithImage:image];
-                [weakSelf presentViewController:imageVC animated:NO completion:nil];
 
-                
-                
                 // show the image
-#warning If you would like to change the name of the segue, change it here
                 [self performSegueWithIdentifier:@"Show Image Preview" sender:image];
                 
             } else {

@@ -30,6 +30,11 @@
 		31AA3D441D38B56A0081C7E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D431D38B56A0081C7E1 /* Photos.framework */; };
 		31AA3D461D38B5740081C7E1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AA3D451D38B5740081C7E1 /* AVFoundation.framework */; };
 		31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA3D651D391DC80081C7E1 /* PhotoView.swift */; };
+		31B8C6431D3F7358007DB887 /* webimModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8C6421D3F7358007DB887 /* webimModels.swift */; };
+		31B8C6451D3F735F007DB887 /* globalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8C6441D3F735F007DB887 /* globalCode.swift */; };
+		31B8C6471D3F9035007DB887 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8C6461D3F9035007DB887 /* signInVC.swift */; };
+		31B8C6491D3F94F7007DB887 /* resetPasswordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8C6481D3F94F7007DB887 /* resetPasswordsVC.swift */; };
+		31B8C64B1D3FAB9C007DB887 /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8C64A1D3FAB9C007DB887 /* homeVC.swift */; };
 		CA9906ED48FD43A72732B6DE /* Pods_Nett.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57C9414157A8E452135ED93 /* Pods_Nett.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,11 @@
 		31AA3D431D38B56A0081C7E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		31AA3D451D38B5740081C7E1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		31AA3D651D391DC80081C7E1 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		31B8C6421D3F7358007DB887 /* webimModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webimModels.swift; sourceTree = "<group>"; };
+		31B8C6441D3F735F007DB887 /* globalCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalCode.swift; sourceTree = "<group>"; };
+		31B8C6461D3F9035007DB887 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		31B8C6481D3F94F7007DB887 /* resetPasswordsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordsVC.swift; sourceTree = "<group>"; };
+		31B8C64A1D3FAB9C007DB887 /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		D58A4D79DD3A22F7C80A4051 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		F1272C409ECB33FA146084C8 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nett.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nett/Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
 		F57C9414157A8E452135ED93 /* Pods_Nett.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nett.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +142,7 @@
 		31AA3CFF1D389A450081C7E1 /* Nett */ = {
 			isa = PBXGroup;
 			children = (
+				31B8C6411D3F7343007DB887 /* WeBIM */,
 				31AA3D121D38B3A80081C7E1 /* LLSimpleCamera */,
 				31AA3D001D389A450081C7E1 /* AppDelegate.swift */,
 				31AA3D021D389A450081C7E1 /* ViewController.swift */,
@@ -203,6 +214,18 @@
 				31AA3D391D38B4720081C7E1 /* Info.plist */,
 			);
 			path = NettTests;
+			sourceTree = "<group>";
+		};
+		31B8C6411D3F7343007DB887 /* WeBIM */ = {
+			isa = PBXGroup;
+			children = (
+				31B8C6421D3F7358007DB887 /* webimModels.swift */,
+				31B8C6441D3F735F007DB887 /* globalCode.swift */,
+				31B8C6461D3F9035007DB887 /* signInVC.swift */,
+				31B8C64A1D3FAB9C007DB887 /* homeVC.swift */,
+				31B8C6481D3F94F7007DB887 /* resetPasswordsVC.swift */,
+			);
+			name = WeBIM;
 			sourceTree = "<group>";
 		};
 		9ADACEB90B6739D96CB2D280 /* Pods */ = {
@@ -384,13 +407,18 @@
 				31AA3D261D38B4030081C7E1 /* ImageViewController.m in Sources */,
 				31AA3D661D391DC80081C7E1 /* PhotoView.swift in Sources */,
 				314B8A691D3F2AC300DD26CE /* LLSimpleCamera.m in Sources */,
+				31B8C6431D3F7358007DB887 /* webimModels.swift in Sources */,
+				31B8C6451D3F735F007DB887 /* globalCode.swift in Sources */,
 				31AA3D421D38B5440081C7E1 /* PreviewImageViewController.swift in Sources */,
+				31B8C6491D3F94F7007DB887 /* resetPasswordsVC.swift in Sources */,
 				31AA3D271D38B4030081C7E1 /* VideoViewController.m in Sources */,
 				314B8A511D3F270900DD26CE /* UIImage+Crop.m in Sources */,
 				314B8A521D3F270900DD26CE /* UIImage+Resize.m in Sources */,
 				314B8A6A1D3F2AC300DD26CE /* LLSimpleCamera+Helper.m in Sources */,
 				3115581A1D3E0BA600EA83B3 /* SignatureView.swift in Sources */,
+				31B8C64B1D3FAB9C007DB887 /* homeVC.swift in Sources */,
 				314B8A681D3F2AC300DD26CE /* UIImage+FixOrientation.m in Sources */,
+				31B8C6471D3F9035007DB887 /* signInVC.swift in Sources */,
 				31AA3D251D38B4030081C7E1 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

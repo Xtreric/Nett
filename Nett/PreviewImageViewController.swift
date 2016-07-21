@@ -13,6 +13,9 @@ import CoreData
 
 let albumName = "Nett"
 
+let drawNormal = UIImage(named: "draw_icon")! as UIImage
+let drawHighlight = UIImage(named: "drawBlue_icon")! as UIImage
+
 class PreviewImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
     
     
@@ -24,6 +27,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var clearSignatureViewBtn: UIButton!
     @IBOutlet weak var retakeBtn: UIButton!
     
+    @IBOutlet weak var drawBtn: UIButton!
     @IBOutlet weak var recordSoundBtn: UIButton!
     @IBOutlet weak var playSoundBtn: UIButton!
     @IBOutlet weak var saveSoundBtn: UIButton!
@@ -39,15 +43,15 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         
         // RECORD SOUND
         setupRecorder()
+        
+        
+        
     }
     
     
-    // HIDE STATUS BAR
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
 
 
+    
     let picker = UIImagePickerController()
     var selectedImage:UIImage?{
         didSet{
@@ -56,10 +60,17 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     
+    
+    // HIDE STATUS BAR ----------------
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    // HIDE STATUS BAR ----------------
+    
+    
+    
     // SAVE IMAGE ----------------
     @IBAction func saveImageBtn_Click(sender: AnyObject) {
-        print("drawBtn_Click")
-        
         // hide all buttons
         hideButtons()
 
@@ -71,6 +82,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        UIImageJPEGRepresentation(screenshot, 0.5)
 
         //set finalImage to IBOulet UIImageView
         mergeView.image = screenshot
@@ -79,8 +91,12 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         // save original image
         UIImageWriteToSavedPhotosAlbum(self.imageView.getSignatureImage(), nil, nil, nil)
         // save merge image
-        UIImageWriteToSavedPhotosAlbum(self.mergeView.getSignatureImage(), nil, nil, nil)
-        
+        if signatureView.hidden == true {
+            print("signatureView = hidden, do not save")
+        } else {
+            print("signatureView = hidden, save")
+            UIImageWriteToSavedPhotosAlbum(self.mergeView.getSignatureImage(), nil, nil, nil)
+        }
         
         // show all buttons
         showButtons()
@@ -92,12 +108,33 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-
+    
+    
+    // DRAWING SIGNATURE ----------------
+    @IBAction func drawBtn_Click(sender: AnyObject) {
+        if signatureView.hidden == true{
+            signatureView.hidden = false
+            sender.setImage(drawHighlight,forState: UIControlState.Normal)
+        } else {
+            signatureView.hidden = true
+            sender.setImage(drawNormal,forState: UIControlState.Normal)
+        }
+    }
+    // DRAWING SIGNATURE ----------------
+    
+    
+    
     // CLEAR SIGNATURE VIEW ----------------
     @IBAction func clearSignatureViewBtn_Click(sender: AnyObject) {
-        print("clearSignatureViewBtn_Click")
-        self.signatureView.clearSignature()
+        if signatureView.hidden == true {
+            print("signatureView = hidden, do not clear")
+        } else {
+            self.signatureView.clearSignature()
+        }
     }
+    // CLEAR SIGNATURE VIEW ----------------
+    
+    
     
     // RETAKE ----------------
     @IBAction func retakeBtn_Click(sender: AnyObject) {
@@ -171,6 +208,8 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         recordSoundBtn.hidden = true
         playSoundBtn.hidden = true
         saveSoundBtn.hidden = true
+        colorChangeBtn.hidden = true
+        drawBtn.hidden = true
     }
     // HIDE BUTTONS ----------------
     
@@ -183,8 +222,12 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         recordSoundBtn.hidden = false
         playSoundBtn.hidden = false
         saveSoundBtn.hidden = false
+        colorChangeBtn.hidden = false
+        drawBtn.hidden = false
     }
     // SHOW BUTTONS ----------------
+    
+
     
     
     
