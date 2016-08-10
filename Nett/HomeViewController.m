@@ -19,7 +19,7 @@
 @property (strong, nonatomic) UIButton *snapButton;
 @property (strong, nonatomic) UIButton *switchButton;
 @property (strong, nonatomic) UIButton *flashButton;
-@property (strong, nonatomic) UIButton *backButton;
+//@property (strong, nonatomic) UIButton *backButton;
 @property (strong, nonatomic) UISegmentedControl *segmentedControl;
 @end
 
@@ -121,14 +121,14 @@
     [self.flashButton addTarget:self action:@selector(flashButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.flashButton];
     
-    // button to back
-    self.backButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.backButton.frame = CGRectMake(4.5, 5.5, 16.0f + 20.0f, 24.0f + 20.0f);
-    self.backButton.tintColor = [UIColor whiteColor];
-    [self.backButton setImage:[UIImage imageNamed:@"back_icon.png"] forState:UIControlStateNormal];
-    //self.backButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-    [self.backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.backButton];
+//    // button to back
+//    self.backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//    self.backButton.frame = CGRectMake(4.5, 5.5, 16.0f + 20.0f, 24.0f + 20.0f);
+//    self.backButton.tintColor = [UIColor whiteColor];
+//    [self.backButton setImage:[UIImage imageNamed:@"back_icon.png"] forState:UIControlStateNormal];
+//    //self.backButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+//    [self.backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.backButton];
     
     
     
@@ -197,12 +197,12 @@
     }
 }
 
-- (void)backButtonPressed:(UIButton *)button
-{
-    
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-    
-}
+//- (void)backButtonPressed:(UIButton *)button
+//{
+//    
+//    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+//    
+//}
 
 - (void)snapButtonPressed:(UIButton *)button {
     __weak typeof(self) weakSelf = self;

@@ -8,5 +8,6 @@ target 'Nett' do
   # Pods for Nett
 
 pod 'LLSimpleCamera', '~> 4.1'
+pod 'GoogleMaps'
 
 end

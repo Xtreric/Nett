@@ -7,6 +7,7 @@
 //
 
 #import "VideoViewController.h"
+#import "Nett-Swift.h"
 @import AVFoundation;
 
 @interface VideoViewController ()
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) AVPlayer *avPlayer;
 @property (strong, nonatomic) AVPlayerLayer *avPlayerLayer;
 @property (strong, nonatomic) UIButton *cancelButton;
+@property (strong, nonatomic) UIButton *saveButton;
 @end
 
 @implementation VideoViewController
@@ -49,11 +51,22 @@
     self.avPlayerLayer.frame = CGRectMake(0, 0, screenRect.size.width, screenRect.size.height);
     [self.view.layer addSublayer:self.avPlayerLayer];
     
+    
+    
+
     // cancel button
     [self.view addSubview:self.cancelButton];
     [self.cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     self.cancelButton.frame = CGRectMake(0, 0, 44, 44);
+/// ===============================================================
+    // save button
+    [self.view addSubview:self.saveButton];
+    [self.saveButton addTarget:self action:@selector(saveButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.saveButton.frame = CGRectMake(0, 690, 44, 44);
 }
+// ===============================================================
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -70,9 +83,15 @@
     return YES;
 }
 
+
+
+
+
+
+
 - (UIButton *)cancelButton {
     if(!_cancelButton) {
-        UIImage *cancelImage = [UIImage imageNamed:@"cancel.png"];
+        UIImage *cancelImage = [UIImage imageNamed:@"back_icon"];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.tintColor = [UIColor whiteColor];
         [button setImage:cancelImage forState:UIControlStateNormal];
@@ -89,11 +108,46 @@
     
     return _cancelButton;
 }
+// ===============================================================
+- (UIButton *)saveButton {
+    if(!_saveButton) {
+        UIImage *saveImage = [UIImage imageNamed:@"save_icon"];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.tintColor = [UIColor whiteColor];
+        [button setImage:saveImage forState:UIControlStateNormal];
+        button.imageView.clipsToBounds = NO;
+        button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        button.layer.shadowColor = [UIColor blackColor].CGColor;
+        button.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+        button.layer.shadowOpacity = 0.4f;
+        button.layer.shadowRadius = 1.0f;
+        button.clipsToBounds = NO;
+        
+        _saveButton = button;
+    }
+    
+    return _saveButton;
+}
+// ===============================================================
+
+
+
+
 
 - (void)cancelButtonPressed:(UIButton *)button {
     NSLog(@"cancel button pressed!");
     [self.navigationController popViewControllerAnimated:YES];
 }
+// ===============================================================
+- (void)saveButtonPressed:(UIButton *)button {
+    NSLog(@"save button pressed!");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+// ===============================================================
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

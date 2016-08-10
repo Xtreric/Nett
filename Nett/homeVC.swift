@@ -21,6 +21,9 @@ class homeVC: UIViewController {
     @IBOutlet weak var logoutBtn: UIButton!
     
     @IBAction func logoutBtn_Click(sender: AnyObject) {
+        curUserData.AccessToken = ""
+        //print("token: \(curUserData.AccessToken)")
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

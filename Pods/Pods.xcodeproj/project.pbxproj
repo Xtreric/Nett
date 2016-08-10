@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB78F671FD871F87BC803E55DD245443 /* LLSimpleCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = F6363EF728F303DF8F76F5409B8C0FC3 /* LLSimpleCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CA8BCBE8D912BA8500E198D4F47E1AE /* LLSimpleCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9C32C288CB772855F9FB6970E3B7080 /* LLSimpleCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E3D71D11A9778CCAEE350748CD92286 /* LLSimpleCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FBC59E31B4555402637185F76ECA1F7 /* LLSimpleCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FE341E2B285CBF3738349172B6CC22B /* Pods-Nett-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE30F1CC71DEECADFDFA8D8E22040C77 /* Pods-Nett-dummy.m */; };
 		6ACD0E6C7C06FFCBA6ED78FCDAF9700D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A99E1ED6492F91E6807B16994861C5 /* Foundation.framework */; };
-		6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5863B13606DAD3366D9CF74E8618DD87 /* LLSimpleCamera-dummy.m */; };
-		924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FA175CC44F7860E223E6396291A152 /* LLSimpleCamera.m */; };
-		93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3535B4E8AD8F8BF3A66F07D3FDEF46 /* UIImage+FixOrientation.m */; };
-		C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FAB3972D54D1756145052C83B00E73C /* UIImage+FixOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AD52D80E5C7AB3C0D28A2BB4FCAE074 /* LLSimpleCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 532E0E42C7292DB35964867BF4AADE9D /* LLSimpleCamera-dummy.m */; };
+		924E42C1512BA8B48BF2974343F4D1B4 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44A22C597E82BF9FD35256CE5D548C /* LLSimpleCamera.m */; };
+		93A65C4380703954DF5831808850E6D6 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C00DC31F7CD31B3C9006FDF94F358 /* UIImage+FixOrientation.m */; };
+		C3C101ACB04EDAC3BA7EC5F4C2984A94 /* UIImage+FixOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F13A075E0D927981263A5BA168DB9AF /* UIImage+FixOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE47F04049845420C40A870BDF9133ED /* Pods-Nett-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C876AC93850C875A611176908E4CBD9 /* Pods-Nett-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D29C3EA7C38D0966E28A1E6082308F80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A99E1ED6492F91E6807B16994861C5 /* Foundation.framework */; };
 		D400F1AC35567E62079899DB27777D69 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283836EF5A0AA5CDF757AD35B494F1FA /* AVFoundation.framework */; };
@@ -31,30 +31,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F6BCB05BD330AAAEAAD26D52C36CDB5 /* LLSimpleCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-prefix.pch"; sourceTree = "<group>"; };
-		1FAB3972D54D1756145052C83B00E73C /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FixOrientation.h"; path = "LLSimpleCamera/UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		02878D2D322D1A92A176361002EA6199 /* LLSimpleCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-prefix.pch"; sourceTree = "<group>"; };
+		0D44A22C597E82BF9FD35256CE5D548C /* LLSimpleCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLSimpleCamera.m; path = LLSimpleCamera/LLSimpleCamera.m; sourceTree = "<group>"; };
+		1FE1C839D3ED66F8D08C9A58C544797D /* LLSimpleCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LLSimpleCamera.modulemap; sourceTree = "<group>"; };
 		283836EF5A0AA5CDF757AD35B494F1FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		2D3535B4E8AD8F8BF3A66F07D3FDEF46 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FixOrientation.m"; path = "LLSimpleCamera/UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		2F13A075E0D927981263A5BA168DB9AF /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FixOrientation.h"; path = "LLSimpleCamera/UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		339C00DC31F7CD31B3C9006FDF94F358 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FixOrientation.m"; path = "LLSimpleCamera/UIImage+FixOrientation.m"; sourceTree = "<group>"; };
 		3F012DEF6E80C35A1E368C90B9EA3AA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6DFB327E42CFAB2C90B3415B1EDE22 /* Pods-Nett.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nett.debug.xcconfig"; sourceTree = "<group>"; };
 		4241836CCE7373FC9379AEA983768157 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LLSimpleCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4512D30C01A013BD26E9F8410AAF019B /* LLSimpleCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LLSimpleCamera.modulemap; sourceTree = "<group>"; };
+		5084E53CD43BAB5562866633924D7CF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532E0E42C7292DB35964867BF4AADE9D /* LLSimpleCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera-dummy.m"; sourceTree = "<group>"; };
 		575DDD552F56433D606A1EE41A464167 /* Pods-Nett-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Nett-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5863B13606DAD3366D9CF74E8618DD87 /* LLSimpleCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LLSimpleCamera-dummy.m"; sourceTree = "<group>"; };
-		58FDD4C36E37640E4D03A8319F3C2C5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FE0992783AC49CBD29D46CDB6338094 /* LLSimpleCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLSimpleCamera.xcconfig; sourceTree = "<group>"; };
 		6C876AC93850C875A611176908E4CBD9 /* Pods-Nett-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Nett-umbrella.h"; sourceTree = "<group>"; };
+		8FBC59E31B4555402637185F76ECA1F7 /* LLSimpleCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLSimpleCamera.h; path = LLSimpleCamera/LLSimpleCamera.h; sourceTree = "<group>"; };
 		8FCEDBAB311087B63BFF51D339B941EF /* Pods-Nett-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Nett-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96A99E1ED6492F91E6807B16994861C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A56D6DCE757BB325EC0D95930124A7A6 /* LLSimpleCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LLSimpleCamera.xcconfig; sourceTree = "<group>"; };
 		B0EA2C754127AD42EA7F6FE3931EB759 /* Pods_Nett.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nett.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28EB31B40CD3053754F9F32130CF1EF /* Pods-Nett-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nett-frameworks.sh"; sourceTree = "<group>"; };
 		B690E5E41267F596F564CE7D4200B451 /* Pods-Nett-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Nett-resources.sh"; sourceTree = "<group>"; };
-		BB78F671FD871F87BC803E55DD245443 /* LLSimpleCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-umbrella.h"; sourceTree = "<group>"; };
 		D1E41E1D62800ADDD71C17850D17A0E5 /* Pods-Nett.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Nett.release.xcconfig"; sourceTree = "<group>"; };
-		D9FA175CC44F7860E223E6396291A152 /* LLSimpleCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLSimpleCamera.m; path = LLSimpleCamera/LLSimpleCamera.m; sourceTree = "<group>"; };
+		DA93DDDD544BC645D2766E8008ADFA7D /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		E6BFC32C6F54C60D12FCB83E718266E3 /* Pods-Nett.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Nett.modulemap"; sourceTree = "<group>"; };
-		F6363EF728F303DF8F76F5409B8C0FC3 /* LLSimpleCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLSimpleCamera.h; path = LLSimpleCamera/LLSimpleCamera.h; sourceTree = "<group>"; };
+		F7055DD1E2665CB1E7120C9CD140258D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		F9C32C288CB772855F9FB6970E3B7080 /* LLSimpleCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LLSimpleCamera-umbrella.h"; sourceTree = "<group>"; };
 		FE30F1CC71DEECADFDFA8D8E22040C77 /* Pods-Nett-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Nett-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		268BD37C8A30B8A4813DE88C739ACFB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0FEADF270EE842F3D529EF8876C0370 /* GoogleMaps */,
+				AD15843E76205BA209371AB74C12EDB9 /* LLSimpleCamera */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42351F2936A083A4F77691E44CE224AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7055DD1E2665CB1E7120C9CD140258D /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +106,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7197DCC19C38D8041DDB9852DD714DD3 /* Pods */ = {
+		60D7D21B9861068EA5B88C0E96242ACB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD156EACCBF5D0E4D67F0A31537667D4 /* LLSimpleCamera */,
+				5084E53CD43BAB5562866633924D7CF8 /* Info.plist */,
+				1FE1C839D3ED66F8D08C9A58C544797D /* LLSimpleCamera.modulemap */,
+				5FE0992783AC49CBD29D46CDB6338094 /* LLSimpleCamera.xcconfig */,
+				532E0E42C7292DB35964867BF4AADE9D /* LLSimpleCamera-dummy.m */,
+				02878D2D322D1A92A176361002EA6199 /* LLSimpleCamera-prefix.pch */,
+				F9C32C288CB772855F9FB6970E3B7080 /* LLSimpleCamera-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/LLSimpleCamera";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -100,7 +125,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				7197DCC19C38D8041DDB9852DD714DD3 /* Pods */,
+				268BD37C8A30B8A4813DE88C739ACFB1 /* Pods */,
 				F0B181E6ED405D9F05CADE45136CDD81 /* Products */,
 				E4517B37DEE5449BDD13D5A999D57C83 /* Targets Support Files */,
 			);
@@ -115,30 +140,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		AD156EACCBF5D0E4D67F0A31537667D4 /* LLSimpleCamera */ = {
+		AD15843E76205BA209371AB74C12EDB9 /* LLSimpleCamera */ = {
 			isa = PBXGroup;
 			children = (
-				F6363EF728F303DF8F76F5409B8C0FC3 /* LLSimpleCamera.h */,
-				D9FA175CC44F7860E223E6396291A152 /* LLSimpleCamera.m */,
-				1FAB3972D54D1756145052C83B00E73C /* UIImage+FixOrientation.h */,
-				2D3535B4E8AD8F8BF3A66F07D3FDEF46 /* UIImage+FixOrientation.m */,
-				BD11A7C07D08AFBEB8355494BF0C5AED /* Support Files */,
+				8FBC59E31B4555402637185F76ECA1F7 /* LLSimpleCamera.h */,
+				0D44A22C597E82BF9FD35256CE5D548C /* LLSimpleCamera.m */,
+				2F13A075E0D927981263A5BA168DB9AF /* UIImage+FixOrientation.h */,
+				339C00DC31F7CD31B3C9006FDF94F358 /* UIImage+FixOrientation.m */,
+				60D7D21B9861068EA5B88C0E96242ACB /* Support Files */,
 			);
 			path = LLSimpleCamera;
-			sourceTree = "<group>";
-		};
-		BD11A7C07D08AFBEB8355494BF0C5AED /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				58FDD4C36E37640E4D03A8319F3C2C5F /* Info.plist */,
-				4512D30C01A013BD26E9F8410AAF019B /* LLSimpleCamera.modulemap */,
-				A56D6DCE757BB325EC0D95930124A7A6 /* LLSimpleCamera.xcconfig */,
-				5863B13606DAD3366D9CF74E8618DD87 /* LLSimpleCamera-dummy.m */,
-				1F6BCB05BD330AAAEAAD26D52C36CDB5 /* LLSimpleCamera-prefix.pch */,
-				BB78F671FD871F87BC803E55DD245443 /* LLSimpleCamera-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LLSimpleCamera";
 			sourceTree = "<group>";
 		};
 		BF18B19F24264EAD1C92B4134E9240B0 /* Pods-Nett */ = {
@@ -174,6 +185,23 @@
 				B0EA2C754127AD42EA7F6FE3931EB759 /* Pods_Nett.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F0FEADF270EE842F3D529EF8876C0370 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				42351F2936A083A4F77691E44CE224AA /* Frameworks */,
+				F2732A7C4E12BA62135F3B8A4FA00DBD /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		F2732A7C4E12BA62135F3B8A4FA00DBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA93DDDD544BC645D2766E8008ADFA7D /* GoogleMaps.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +398,7 @@
 		};
 		244B4D01C7CF7CF13D02CC2BAFF7CB68 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A56D6DCE757BB325EC0D95930124A7A6 /* LLSimpleCamera.xcconfig */;
+			baseConfigurationReference = 5FE0992783AC49CBD29D46CDB6338094 /* LLSimpleCamera.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -432,7 +460,7 @@
 		};
 		8482550CB933444C4AFBC31CF0A66C5D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A56D6DCE757BB325EC0D95930124A7A6 /* LLSimpleCamera.xcconfig */;
+			baseConfigurationReference = 5FE0992783AC49CBD29D46CDB6338094 /* LLSimpleCamera.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

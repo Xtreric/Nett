@@ -14,14 +14,25 @@ class signInVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var forgetPasswordBtn: UIButton!
+    @IBOutlet weak var memoryUserBtn: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginActivity: UIActivityIndicatorView!
 
+    let memoryChecked = UIImage(named: "checkbox-checked")
+    let memoryUnchecked = UIImage(named: "checkbox-unchecked")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // hide activity indicator view
         loginActivity.hidden = true
+        
+        loginActivity.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        loginActivity.color = UIColor.purpleColor()
+        
+        memoryUserBtn.setImage(memoryUnchecked, forState: .Normal)
+        memoryUserBtn.setImage(memoryChecked, forState: .Highlighted)
 
         shouldAutorotate()
         supportedInterfaceOrientations()
@@ -44,6 +55,10 @@ class signInVC: UIViewController, UITextFieldDelegate {
     }
     
 
+    @IBAction func memoryUserBtn_Click(sender: AnyObject) {
+        print("memory User button clicked")
+    }
+    
     
     @IBAction func forgetPasswordBtn_Click(sender: AnyObject) {
         print("forget password button clicked")
@@ -108,7 +123,7 @@ class signInVC: UIViewController, UITextFieldDelegate {
         let password: String = (passwordTxt.text?.URLEncoded)!
         
         let bodyStr: String = "grant_type=password&username=" + username + "&password=" + password
-        let myURL = NSURL(string: "http://webim.com.tw/webimcloudbeta/token")!
+        let myURL = NSURL(string: "http://webim.com.tw/webimcloud/token")!
         let request = NSMutableURLRequest(URL: myURL)
         request.HTTPMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -148,7 +163,7 @@ class signInVC: UIViewController, UITextFieldDelegate {
             
             // Setup the request
             let pars: String = "email=" + curUserData.Name!.URLEncoded
-            let myURL = NSURL(string: "http://webim.com.tw/webimcloudbeta/api/UsersAPI?" + pars)!
+            let myURL = NSURL(string: "http://webim.com.tw/webimcloud/api/UsersAPI?" + pars)!
             let request = NSMutableURLRequest(URL: myURL)
             request.HTTPMethod = "GET"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

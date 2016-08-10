@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 import AVFoundation
-import CoreData
+
 
 let albumName = "Nett"
 
@@ -34,6 +34,13 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBOutlet weak var colorChangeBtn: UIButton!
 
+    
+    var albumFound : Bool = false
+    var assetCollection: PHAssetCollection = PHAssetCollection()
+    var photosAsset: PHFetchResult!
+    var assetThumbnailSize:CGSize!
+    
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +53,38 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         
+        // CREATE THE PHOTO FOLDER
+        
+        //Check if the folder exists, if not, create it
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.predicate = NSPredicate(format: "title = %@", albumName)
+        let collection:PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .Any, options: fetchOptions)
+        
+        if let first_Obj:AnyObject = collection.firstObject{
+            //found the album
+            self.albumFound = true
+            self.assetCollection = first_Obj as! PHAssetCollection
+        }else{
+            // Album placeholder for the asset collection, used to reference collection in completion handler
+            var albumPlaceholder:PHObjectPlaceholder!
+            // create the folder
+            NSLog("\nFolder \"%@\" does not exist\nCreating now...", albumName)
+            PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+                let request = PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(albumName)
+                albumPlaceholder = request.placeholderForCreatedAssetCollection
+                },
+                completionHandler: {(success:Bool, error:NSError?)in
+                    if(success){
+                        print("Successfully created folder")
+                        self.albumFound = true
+                        let collection = PHAssetCollection.fetchAssetCollectionsWithLocalIdentifiers([albumPlaceholder.localIdentifier], options: nil)
+                        self.assetCollection = collection.firstObject as! PHAssetCollection
+                    }else{
+                        print("Error creating folder")
+                        self.albumFound = false
+                }
+            })
+        }
     }
     
     
@@ -60,7 +99,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     
-    
+
     // HIDE STATUS BAR ----------------
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -86,7 +125,6 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
 
         //set finalImage to IBOulet UIImageView
         mergeView.image = screenshot
-        
         
         // save original image
         UIImageWriteToSavedPhotosAlbum(self.imageView.getSignatureImage(), nil, nil, nil)
@@ -135,7 +173,7 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
     // CLEAR SIGNATURE VIEW ----------------
     
     
-    
+        
     // RETAKE ----------------
     @IBAction func retakeBtn_Click(sender: AnyObject) {
         print("retakeBtn_Click")
@@ -207,8 +245,8 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         retakeBtn.hidden = true
         recordSoundBtn.hidden = true
         playSoundBtn.hidden = true
-        saveSoundBtn.hidden = true
-        colorChangeBtn.hidden = true
+        //saveSoundBtn.hidden = true
+        //colorChangeBtn.hidden = true
         drawBtn.hidden = true
     }
     // HIDE BUTTONS ----------------
@@ -221,8 +259,8 @@ class PreviewImageViewController: UIViewController, UIImagePickerControllerDeleg
         retakeBtn.hidden = false
         recordSoundBtn.hidden = false
         playSoundBtn.hidden = false
-        saveSoundBtn.hidden = false
-        colorChangeBtn.hidden = false
+        //saveSoundBtn.hidden = false
+        //colorChangeBtn.hidden = false
         drawBtn.hidden = false
     }
     // SHOW BUTTONS ----------------

@@ -1,12 +1,15 @@
 PODS:
+  - GoogleMaps (1.13.2)
   - LLSimpleCamera (4.2.0)
 
 DEPENDENCIES:
+  - GoogleMaps
   - LLSimpleCamera (~> 4.1)
 
 SPEC CHECKSUMS:
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
 
-PODFILE CHECKSUM: 2219a276c893ed50f43f135cc880a50ed9da3b28
+PODFILE CHECKSUM: 70feca09d747cd1490ca19c8c1e5cd198d69f493
 
 COCOAPODS: 1.0.1
